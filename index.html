@@ -1,0 +1,2593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Numeric | Learn Math. Understand Math. Master Math.</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f9fc;
+    color: #172033;
+    line-height: 1.6;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    border-bottom: 1px solid #e8edf5;
+    padding: 15px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: #2563eb;
+}
+
+.logo span {
+    color: #111827;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 14px;
+    color: #4b5563;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.nav-button {
+    background: #2563eb;
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 8px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+    padding: 80px 6%;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+    background: linear-gradient(135deg, #eef5ff, #ffffff);
+}
+
+.hero-badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+    color: #111827;
+}
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+.hero p {
+    font-size: 19px;
+    color: #64748b;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 14px 23px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+}
+
+.primary-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+.secondary-btn {
+    background: white;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+}
+
+.hero-card {
+    background: white;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.progress-number {
+    font-size: 38px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 72%;
+    background: #2563eb;
+}
+
+.mini-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.mini-card {
+    padding: 18px;
+    border-radius: 12px;
+    background: #f8fafc;
+}
+
+.mini-card strong {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.mini-card small {
+    color: #64748b;
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+    padding: 85px 6%;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 50px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    color: #64748b;
+}
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.step {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.step-number {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-weight: bold;
+}
+
+.step h3 {
+    margin-bottom: 8px;
+}
+
+.step p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* =========================
+   CURRICULUM
+========================= */
+
+.curriculum {
+    background: #0f172a;
+    color: white;
+}
+
+.curriculum .section-title p {
+    color: #94a3b8;
+}
+
+.grade-selector {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.grade-btn {
+    border: 1px solid #334155;
+    background: #1e293b;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+.grade-btn:hover,
+.grade-btn.active {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.grade-content {
+    max-width: 1100px;
+    margin: auto;
+    background: #1e293b;
+    border-radius: 20px;
+    padding: 35px;
+}
+
+.grade-content h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.grade-content > p {
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+.lesson-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.lesson-card {
+    background: #0f172a;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+}
+
+.lesson-card h4 {
+    margin-bottom: 8px;
+}
+
+.lesson-card p {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+/* =========================
+   KINDERGARTEN / GAMES
+========================= */
+
+.games-section {
+    background: #fff7ed;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.game-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    border: 2px solid #fed7aa;
+    transition: 0.2s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.game-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.game-card h3 {
+    margin-bottom: 8px;
+}
+
+.game-card p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.play-btn {
+    border: none;
+    background: #f97316;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature {
+    background: white;
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.feature-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    margin-bottom: 8px;
+}
+
+.feature p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* =========================
+   AI ASSISTANT
+========================= */
+
+.ai-section {
+    background: #eff6ff;
+}
+
+.ai-box {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 15px 50px rgba(37, 99, 235, 0.1);
+    overflow: hidden;
+}
+
+.ai-header {
+    background: #2563eb;
+    color: white;
+    padding: 25px;
+}
+
+.ai-header h3 {
+    font-size: 25px;
+}
+
+.ai-header p {
+    opacity: 0.9;
+}
+
+.chat-area {
+    min-height: 300px;
+    padding: 25px;
+}
+
+.message {
+    max-width: 75%;
+    padding: 14px 17px;
+    border-radius: 14px;
+    margin-bottom: 15px;
+}
+
+.ai-message {
+    background: #eff6ff;
+}
+
+.user-message {
+    background: #2563eb;
+    color: white;
+    margin-left: auto;
+}
+
+.ai-input {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.ai-input input {
+    flex: 1;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+}
+
+/* =========================
+   VIDEO LESSONS
+========================= */
+
+.video-section {
+    background: white;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.video-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+}
+
+.video-placeholder {
+    height: 180px;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 50px;
+}
+
+.video-info {
+    padding: 20px;
+}
+
+.video-info h3 {
+    margin-bottom: 8px;
+}
+
+.video-info p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* =========================
+   ASSESSMENT
+========================= */
+
+.assessment {
+    background: #f8fafc;
+}
+
+.assessment-box {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+}
+
+.question {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 25px 0;
+}
+
+.answers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.answer-btn {
+    background: white;
+    border: 1px solid #cbd5e1;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.answer-btn:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.feedback {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #e5e7eb;
+}
+
+.dashboard-card span {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.dashboard-card strong {
+    display: block;
+    font-size: 30px;
+    margin-top: 8px;
+    color: #2563eb;
+}
+
+/* =========================
+   TEACHER / ADMIN
+========================= */
+
+.teacher-section {
+    background: #f1f5f9;
+}
+
+.admin-panel {
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.admin-actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.admin-action {
+    border: 1px solid #e5e7eb;
+    padding: 20px;
+    border-radius: 12px;
+    background: #f8fafc;
+    cursor: pointer;
+}
+
+.admin-action:hover {
+    border-color: #2563eb;
+}
+
+.admin-action strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.admin-action span {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* =========================
+   FOUNDERS
+========================= */
+
+.founders {
+    background: white;
+}
+
+.founders-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.founder {
+    text-align: center;
+    background: #f8fafc;
+    padding: 35px 20px;
+    border-radius: 18px;
+}
+
+.founder-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto auto 15px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.founder h3 {
+    margin-bottom: 5px;
+}
+
+.founder p {
+    color: #64748b;
+}
+
+.developer-credit {
+    margin: 40px auto 0;
+    text-align: center;
+    max-width: 700px;
+    padding: 25px;
+    border-radius: 15px;
+    background: #eff6ff;
+}
+
+.developer-credit strong {
+    color: #2563eb;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    background: #2563eb;
+    color: white;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+.cta .primary-btn {
+    background: white;
+    color: #2563eb;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #0f172a;
+    color: white;
+    padding: 50px 6%;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+footer a {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #334155;
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(15, 23, 42, 0.65);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+}
+
+.close {
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-bottom: 8px;
+}
+
+.modal-content p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+.full-btn {
+    width: 100%;
+    border: none;
+    padding: 14px;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid,
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 14px 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .hero {
+        padding: 60px 5%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .steps,
+    .features-grid,
+    .games-grid,
+    .video-grid,
+    .dashboard-grid,
+    .founders-grid,
+    .lesson-list,
+    .admin-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .answers {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .question {
+        font-size: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <a href="#" class="logo">
+        Numeric<span>.</span>
+    </a>
+
+    <div class="nav-links">
+        <a href="#learn">Learn</a>
+        <a href="#games">Games</a>
+        <a href="#ai">AI Assistant</a>
+        <a href="#videos">Videos</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#about">About</a>
+
+        <a href="#" class="nav-button" onclick="openModal()">
+            Get Started
+        </a>
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div>
+
+        <div class="hero-badge">
+            Mathematics • Kindergarten → Grade 12
+        </div>
+
+        <h1>
+            Stop guessing what you don't know.
+            <span>Know your math.</span>
+        </h1>
+
+        <p>
+            Numeric is a personalized mathematics learning platform
+            designed to help students assess their skills, understand
+            difficult concepts, practice intelligently, and improve
+            with confidence.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-btn" onclick="openModal()">
+                Start Learning
+            </button>
+
+            <a href="#learn" class="secondary-btn">
+                Explore Lessons
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="progress-header">
+
+            <div>
+                <small>Your Learning Progress</small>
+                <div class="progress-number">72%</div>
+            </div>
+
+            <div>📈</div>
+
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+
+        <div class="mini-cards">
+
+            <div class="mini-card">
+                <strong>18</strong>
+                <small>Lessons Completed</small>
+            </div>
+
+            <div class="mini-card">
+                <strong>124</strong>
+                <small>Questions Practiced</small>
+            </div>
+
+            <div class="mini-card">
+                <strong>8</strong>
+                <small>Day Streak</small>
+            </div>
+
+            <div class="mini-card">
+                <strong>A−</strong>
+                <small>Current Level</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HOW NUMERIC WORKS
+========================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>How Numeric Works</h2>
+
+        <p>
+            A learning system designed around the student's actual
+            mathematical needs.
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>Assess</h3>
+            <p>
+                Discover what the student understands and where
+                they need support.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>Identify</h3>
+            <p>
+                Identify strengths, weaknesses and missing
+                mathematical foundations.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>Learn</h3>
+            <p>
+                Learn through structured lessons, explanations,
+                visuals and videos.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <h3>Practice</h3>
+            <p>
+                Practice with questions that match the student's
+                learning level.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">5</div>
+            <h3>Improve</h3>
+            <p>
+                Track progress and continuously strengthen
+                mathematical understanding.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CURRICULUM
+========================= -->
+
+<section class="curriculum" id="learn">
+
+    <div class="section-title">
+
+        <h2>Math From Kindergarten to Grade 12</h2>
+
+        <p>
+            A progressive mathematics curriculum that grows with
+            the student.
+        </p>
+
+    </div>
+
+
+    <div class="grade-selector">
+
+        <button class="grade-btn active" onclick="showGrade('K')">
+            Kindergarten
+        </button>
+
+        <button class="grade-btn" onclick="showGrade('1')">
+            Grade 1
+        </button>
+
+        <button class="grade-btn" onclick="showGrade('2')">
+            Grade 2
+        </button>
+
+        <button class="grade-btn" onclick="showGrade('3')">
+            Grade 3
+        </button>
+
+        <button class="grade-btn" onclick="showGrade('4')">
+            Grade 4
+        </button>
+
+        <button class="grade-btn" onclick="showGrade('5')">
+            Grade 5
+        </button>
+
+        <button class="grade-btn" onclick="showGrade('6')">
+            Grade 6
+        </button>
+
+        <button class="grade-btn" onclick="showGrade('7')">
+            Grade 7
+        </button>
+
+        <button class="grade-btn" onclick="showGrade('8')">
+            Grade 8
+        </button>
+
+        <button class="grade-btn" onclick="showGrade('9')">
+            Grade 9
+        </button>
+
+        <button class="grade-btn" onclick="showGrade('10')">
+            Grade 10
+        </button>
+
+        <button class="grade-btn" onclick="showGrade('11')">
+            Grade 11
+        </button>
+
+        <button class="grade-btn" onclick="showGrade('12')">
+            Grade 12
+        </button>
+
+    </div>
+
+
+    <div class="grade-content" id="gradeContent">
+
+        <h3>Kindergarten Mathematics</h3>
+
+        <p>
+            Fun, visual and interactive learning designed to build
+            early mathematical confidence.
+        </p>
+
+        <div class="lesson-list">
+
+            <div class="lesson-card">
+                <h4>🔢 Numbers 1–20</h4>
+                <p>Recognize, count and identify numbers.</p>
+            </div>
+
+            <div class="lesson-card">
+                <h4>🔷 Shapes</h4>
+                <p>Explore circles, squares, triangles and more.</p>
+            </div>
+
+            <div class="lesson-card">
+                <h4>🎨 Colors & Patterns</h4>
+                <p>Discover patterns through visual activities.</p>
+            </div>
+
+            <div class="lesson-card">
+                <h4>🍎 Counting Objects</h4>
+                <p>Learn numbers using real-world objects.</p>
+            </div>
+
+            <div class="lesson-card">
+                <h4>📏 Measurement</h4>
+                <p>Explore big, small, long and short.</p>
+            </div>
+
+            <div class="lesson-card">
+                <h4>🎮 Math Games</h4>
+                <p>Build confidence through interactive play.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     KINDERGARTEN GAMES
+========================= -->
+
+<section class="games-section" id="games">
+
+    <div class="section-title">
+
+        <h2>Learn Math Through Play</h2>
+
+        <p>
+            Especially designed for Kindergarten and early learners.
+            Learn mathematical concepts through visual activities,
+            games and interaction.
+        </p>
+
+    </div>
+
+
+    <div class="games-grid">
+
+        <div class="game-card">
+
+            <div class="game-icon">🔢</div>
+
+            <h3>Number Hunt</h3>
+
+            <p>
+                Find the correct number before time runs out.
+            </p>
+
+            <button class="play-btn" onclick="playGame('Number Hunt')">
+                Play
+            </button>
+
+        </div>
+
+
+        <div class="game-card">
+
+            <div class="game-icon">🍎</div>
+
+            <h3>Count the Apples</h3>
+
+            <p>
+                Practice counting using colorful objects.
+            </p>
+
+            <button class="play-btn" onclick="playGame('Count the Apples')">
+                Play
+            </button>
+
+        </div>
+
+
+        <div class="game-card">
+
+            <div class="game-icon">🔷</div>
+
+            <h3>Shape Match</h3>
+
+            <p>
+                Match shapes and learn their names.
+            </p>
+
+            <button class="play-btn" onclick="playGame('Shape Match')">
+                Play
+            </button>
+
+        </div>
+
+
+        <div class="game-card">
+
+            <div class="game-icon">🧩</div>
+
+            <h3>Pattern Puzzle</h3>
+
+            <p>
+                Complete simple mathematical patterns.
+            </p>
+
+            <button class="play-btn" onclick="playGame('Pattern Puzzle')">
+                Play
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Everything Students Need</h2>
+
+        <p>
+            Numeric brings assessment, lessons, practice,
+            videos, games and intelligent support into one place.
+        </p>
+
+    </div>
+
+
+    <div class="features-grid">
+
+        <div class="feature">
+            <div class="feature-icon">🧠</div>
+            <h3>Diagnostic Assessment</h3>
+            <p>
+                Understand what students know before deciding
+                what they should learn next.
+            </p>
+        </div>
+
+
+        <div class="feature">
+            <div class="feature-icon">📚</div>
+            <h3>In-Depth Math Lessons</h3>
+            <p>
+                Structured explanations, worked examples,
+                activities and practice.
+            </p>
+        </div>
+
+
+        <div class="feature">
+            <div class="feature-icon">🤖</div>
+            <h3>AI Learning Assistant</h3>
+            <p>
+                Students can ask questions and receive
+                step-by-step learning support.
+            </p>
+        </div>
+
+
+        <div class="feature">
+            <div class="feature-icon">🎮</div>
+            <h3>Math Games</h3>
+            <p>
+                Interactive learning experiences for younger
+                students.
+            </p>
+        </div>
+
+
+        <div class="feature">
+            <div class="feature-icon">🎥</div>
+            <h3>Video Lessons</h3>
+            <p>
+                Teachers and administrators can provide
+                pre-recorded lessons.
+            </p>
+        </div>
+
+
+        <div class="feature">
+            <div class="feature-icon">📊</div>
+            <h3>Progress Tracking</h3>
+            <p>
+                Monitor lessons, practice, scores and
+                learning progress.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     AI ASSISTANT
+========================= -->
+
+<section class="ai-section" id="ai">
+
+    <div class="section-title">
+
+        <h2>Meet Your AI Learning Assistant</h2>
+
+        <p>
+            Students can ask questions whenever they get stuck.
+        </p>
+
+    </div>
+
+
+    <div class="ai-box">
+
+        <div class="ai-header">
+
+            <h3>🤖 Numeric AI</h3>
+
+            <p>
+                Your personal mathematics learning assistant.
+            </p>
+
+        </div>
+
+
+        <div class="chat-area" id="chatArea">
+
+            <div class="message ai-message">
+
+                👋 Hi! I'm your Numeric AI learning assistant.
+                What math topic would you like help with?
+
+            </div>
+
+            <div class="message user-message">
+
+                I don't understand fractions.
+
+            </div>
+
+            <div class="message ai-message">
+
+                No problem! Think about a pizza 🍕 divided into
+                4 equal pieces. If you have one piece, you have
+                <strong>1/4</strong> of the pizza.
+
+                <br><br>
+
+                Would you like to try a quick fraction question?
+
+            </div>
+
+        </div>
+
+
+        <div class="ai-input">
+
+            <input
+                type="text"
+                id="aiInput"
+                placeholder="Ask Numeric AI a math question..."
+            >
+
+            <button class="primary-btn" onclick="sendAIMessage()">
+                Ask
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VIDEO LESSONS
+========================= -->
+
+<section class="video-section" id="videos">
+
+    <div class="section-title">
+
+        <h2>Learn From Video Lessons</h2>
+
+        <p>
+            Teachers and administrators can upload pre-recorded
+            lessons for students to watch anytime.
+        </p>
+
+    </div>
+
+
+    <div class="video-grid">
+
+        <div class="video-card">
+
+            <div class="video-placeholder">
+                ▶
+            </div>
+
+            <div class="video-info">
+
+                <h3>Introduction to Fractions</h3>
+
+                <p>
+                    Grade 5 • Fractions • 18 minutes
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="video-card">
+
+            <div class="video-placeholder">
+                ▶
+            </div>
+
+            <div class="video-info">
+
+                <h3>Solving Linear Equations</h3>
+
+                <p>
+                    Grade 8 • Algebra • 24 minutes
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="video-card">
+
+            <div class="video-placeholder">
+                ▶
+            </div>
+
+            <div class="video-info">
+
+                <h3>Introduction to Calculus</h3>
+
+                <p>
+                    Grade 12 • Calculus • 31 minutes
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ASSESSMENT
+========================= -->
+
+<section class="assessment">
+
+    <div class="section-title">
+
+        <h2>Try a Numeric Assessment</h2>
+
+        <p>
+            A simple example of how Numeric can identify
+            mathematical understanding.
+        </p>
+
+    </div>
+
+
+    <div class="assessment-box">
+
+        <p>
+            <strong>Example Question</strong>
+        </p>
+
+        <div class="question">
+            Solve: 3x + 5 = 20
+        </div>
+
+
+        <div class="answers">
+
+            <button class="answer-btn" onclick="checkAnswer(3)">
+                x = 3
+            </button>
+
+            <button class="answer-btn" onclick="checkAnswer(5)">
+                x = 5
+            </button>
+
+            <button class="answer-btn" onclick="checkAnswer(7)">
+                x = 7
+            </button>
+
+            <button class="answer-btn" onclick="checkAnswer(10)">
+                x = 10
+            </button>
+
+        </div>
+
+
+        <div id="feedback" class="feedback"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STUDENT DASHBOARD
+========================= -->
+
+<section id="dashboard">
+
+    <div class="section-title">
+
+        <h2>Student Dashboard</h2>
+
+        <p>
+            Keep track of learning progress in one place.
+        </p>
+
+    </div>
+
+
+    <div class="dashboard-grid">
+
+        <div class="dashboard-card">
+
+            <span>Overall Score</span>
+
+            <strong>84%</strong>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <span>Lessons Completed</span>
+
+            <strong>18</strong>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <span>Questions Practiced</span>
+
+            <strong>124</strong>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <span>Learning Streak</span>
+
+            <strong>8 🔥</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TEACHER / ADMIN
+========================= -->
+
+<section class="teacher-section">
+
+    <div class="section-title">
+
+        <h2>Teacher & Administrator Tools</h2>
+
+        <p>
+            Give educators the tools to create and manage
+            learning content.
+        </p>
+
+    </div>
+
+
+    <div class="admin-panel">
+
+        <h3>Content Management</h3>
+
+        <p style="color:#64748b;">
+            Teachers and administrators can eventually create
+            lessons, upload videos, add practice questions,
+            assign learning activities and monitor students.
+        </p>
+
+
+        <div class="admin-actions">
+
+            <div class="admin-action" onclick="adminMessage('Create Lesson')">
+
+                <strong>📚 Create Lesson</strong>
+
+                <span>
+                    Build structured math lessons.
+                </span>
+
+            </div>
+
+
+            <div class="admin-action" onclick="adminMessage('Upload Video')">
+
+                <strong>🎥 Upload Video</strong>
+
+                <span>
+                    Add pre-recorded lesson videos.
+                </span>
+
+            </div>
+
+
+            <div class="admin-action" onclick="adminMessage('Add Questions')">
+
+                <strong>📝 Add Questions</strong>
+
+                <span>
+                    Build assessments and practice.
+                </span>
+
+            </div>
+
+
+            <div class="admin-action" onclick="adminMessage('View Students')">
+
+                <strong>👨‍🎓 View Students</strong>
+
+                <span>
+                    Monitor student progress.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOUNDERS
+========================= -->
+
+<section class="founders" id="about">
+
+    <div class="section-title">
+
+        <h2>Meet the Numeric Founders</h2>
+
+        <p>
+            Numeric is being built with the goal of making
+            mathematics learning more accessible, engaging
+            and personalized.
+        </p>
+
+    </div>
+
+
+    <div class="founders-grid">
+
+        <div class="founder">
+
+            <div class="founder-avatar">
+                M
+            </div>
+
+            <h3>Muazzam</h3>
+
+            <p>Co-Founder</p>
+
+        </div>
+
+
+        <div class="founder">
+
+            <div class="founder-avatar">
+                M
+            </div>
+
+            <h3>Maryam</h3>
+
+            <p>Co-Founder</p>
+
+        </div>
+
+
+        <div class="founder">
+
+            <div class="founder-avatar">
+                T
+            </div>
+
+            <h3>Tambuwal</h3>
+
+            <p>Co-Founder</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="developer-credit">
+
+        <p>
+            <strong>Developer • Designer • Coder</strong>
+        </p>
+
+        <p>
+            Muazzam Dalhtu
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+    <h2>Make Math Make Sense.</h2>
+
+    <p>
+        Assess. Learn. Practice. Improve.
+    </p>
+
+    <button class="primary-btn" onclick="openModal()">
+        Start With Numeric
+    </button>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>Numeric.</h3>
+
+            <p>
+                Personalized mathematics learning from
+                Kindergarten through Grade 12.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Learn</h3>
+
+            <a href="#learn">K–12 Math</a>
+            <a href="#games">Math Games</a>
+            <a href="#videos">Video Lessons</a>
+            <a href="#ai">AI Assistant</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Platform</h3>
+
+            <a href="#dashboard">Student Dashboard</a>
+            <a href="#videos">Lessons</a>
+            <a href="#">Practice</a>
+            <a href="#">Assessment</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Numeric</h3>
+
+            <a href="#about">Founders</a>
+            <a href="#">Teachers</a>
+            <a href="#">Administrators</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Numeric. All rights reserved.
+        <br>
+        Built by Muazzam Dalhtu.
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     SIGNUP MODAL
+========================= -->
+
+<div class="modal" id="signupModal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal()">
+            &times;
+        </span>
+
+        <h2>Start Learning With Numeric</h2>
+
+        <p>
+            Create a simple student profile to explore the
+            Numeric learning experience.
+        </p>
+
+
+        <form onsubmit="createProfile(event)">
+
+            <div class="form-group">
+
+                <label>
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    required
+                    placeholder="Enter your name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Grade
+                </label>
+
+                <select id="studentGrade" required>
+
+                    <option value="">
+                        Select Grade
+                    </option>
+
+                    <option>Kindergarten</option>
+                    <option>Grade 1</option>
+                    <option>Grade 2</option>
+                    <option>Grade 3</option>
+                    <option>Grade 4</option>
+                    <option>Grade 5</option>
+                    <option>Grade 6</option>
+                    <option>Grade 7</option>
+                    <option>Grade 8</option>
+                    <option>Grade 9</option>
+                    <option>Grade 10</option>
+                    <option>Grade 11</option>
+                    <option>Grade 12</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Mathematics Level
+                </label>
+
+                <select id="mathLevel" required>
+
+                    <option value="">
+                        Select Level
+                    </option>
+
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+
+                </select>
+
+            </div>
+
+
+            <button class="full-btn" type="submit">
+                Create My Profile
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   MODAL
+========================= */
+
+function openModal() {
+
+    document.getElementById("signupModal").style.display = "flex";
+
+}
+
+function closeModal() {
+
+    document.getElementById("signupModal").style.display = "none";
+
+}
+
+
+window.onclick = function(event) {
+
+    const modal = document.getElementById("signupModal");
+
+    if (event.target === modal) {
+
+        closeModal();
+
+    }
+
+};
+
+
+/* =========================
+   PROFILE
+========================= */
+
+function createProfile(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("studentName").value;
+
+    const grade =
+        document.getElementById("studentGrade").value;
+
+    localStorage.setItem(
+        "numericStudentName",
+        name
+    );
+
+    localStorage.setItem(
+        "numericStudentGrade",
+        grade
+    );
+
+    alert(
+        "Welcome to Numeric, " +
+        name +
+        "! Your student profile has been created."
+    );
+
+    closeModal();
+
+}
+
+
+/* =========================
+   ASSESSMENT
+========================= */
+
+function checkAnswer(answer) {
+
+    const feedback =
+        document.getElementById("feedback");
+
+    if (answer === 5) {
+
+        feedback.innerHTML =
+            "✅ Correct! 3 × 5 + 5 = 20. Great work!";
+
+        feedback.style.color = "#16a34a";
+
+    } else {
+
+        feedback.innerHTML =
+            "❌ Not quite. Try isolating x by subtracting 5 first.";
+
+        feedback.style.color = "#dc2626";
+
+    }
+
+}
+
+
+/* =========================
+   GAMES
+========================= */
+
+function playGame(game) {
+
+    alert(
+        game +
+        " is opening! Interactive game functionality will be connected in the next MVP stage."
+    );
+
+}
+
+
+/* =========================
+   AI ASSISTANT
+========================= */
+
+function sendAIMessage() {
+
+    const input =
+        document.getElementById("aiInput");
+
+    const chat =
+        document.getElementById("chatArea");
+
+    const message =
+        input.value.trim();
+
+    if (!message) return;
+
+
+    const userMessage =
+        document.createElement("div");
+
+    userMessage.className =
+        "message user-message";
+
+    userMessage.textContent =
+        message;
+
+    chat.appendChild(userMessage);
+
+
+    const aiMessage =
+        document.createElement("div");
+
+    aiMessage.className =
+        "message ai-message";
+
+
+    const lower =
+        message.toLowerCase();
+
+
+    if (lower.includes("fraction")) {
+
+        aiMessage.innerHTML =
+            "Let's learn fractions step by step. " +
+            "A fraction represents part of a whole. " +
+            "For example, 3/4 means 3 parts out of 4 equal parts. " +
+            "Would you like me to give you a practice question?";
+
+    }
+
+    else if (
+        lower.includes("algebra") ||
+        lower.includes("equation")
+    ) {
+
+        aiMessage.innerHTML =
+            "Let's break the equation into smaller steps. " +
+            "First, identify the variable. Then use inverse operations " +
+            "to isolate it. Send me the equation you're working on.";
+
+    }
+
+    else if (
+        lower.includes("addition") ||
+        lower.includes("add")
+    ) {
+
+        aiMessage.innerHTML =
+            "Addition combines quantities. For example, " +
+            "3 + 4 = 7. Try this: what is 8 + 5?";
+
+    }
+
+    else {
+
+        aiMessage.innerHTML =
+            "Great question! In the full Numeric platform, " +
+            "the AI Learning Assistant will explain this concept " +
+            "at your grade level and guide you step by step " +
+            "instead of simply giving you the answer.";
+
+    }
+
+
+    chat.appendChild(aiMessage);
+
+    input.value = "";
+
+    chat.scrollTop =
+        chat.scrollHeight;
+
+}
+
+
+/* =========================
+   ADMIN
+========================= */
+
+function adminMessage(action) {
+
+    alert(
+        action +
+        " interface selected. This will become a functional teacher/admin feature when the backend is connected."
+    );
+
+}
+
+
+/* =========================
+   GRADE CONTENT
+========================= */
+
+const gradeData = {
+
+    "K": {
+
+        title: "Kindergarten Mathematics",
+
+        description:
+            "Fun, visual and interactive learning designed to build early mathematical confidence.",
+
+        lessons: [
+            ["🔢 Numbers 1–20", "Recognize, count and identify numbers."],
+            ["🔷 Shapes", "Explore circles, squares, triangles and more."],
+            ["🎨 Colors & Patterns", "Discover patterns through visual activities."],
+            ["🍎 Counting Objects", "Learn numbers using real-world objects."],
+            ["📏 Measurement", "Explore big, small, long and short."],
+            ["🎮 Math Games", "Build confidence through interactive play."]
+        ]
+
+    },
+
+    "1": {
+
+        title: "Grade 1 Mathematics",
+
+        description:
+            "Build strong foundations in counting, addition, subtraction, shapes and measurement.",
+
+        lessons: [
+            ["🔢 Place Value", "Understand ones and tens."],
+            ["➕ Addition", "Add numbers using visual models."],
+            ["➖ Subtraction", "Subtract using strategies and objects."],
+            ["📐 Shapes", "Identify and describe common shapes."],
+            ["⏰ Time", "Read clocks and understand time."],
+            ["💰 Money", "Identify coins and solve simple problems."]
+        ]
+
+    },
+
+    "2": {
+
+        title: "Grade 2 Mathematics",
+
+        description:
+            "Develop fluency in addition, subtraction, multiplication foundations and measurement.",
+
+        lessons: [
+            ["➕ Addition", "Multi-digit addition."],
+            ["➖ Subtraction", "Multi-digit subtraction."],
+            ["✖️ Multiplication", "Introduction to multiplication."],
+            ["📏 Measurement", "Length and units."],
+            ["🍕 Fractions", "Understand simple fractions."],
+            ["📊 Data", "Read basic charts and graphs."]
+        ]
+
+    },
+
+    "3": {
+
+        title: "Grade 3 Mathematics",
+
+        description:
+            "Strengthen multiplication, division, fractions, geometry and problem solving.",
+
+        lessons: [
+            ["✖️ Multiplication", "Multiplication facts and strategies."],
+            ["➗ Division", "Understand division."],
+            ["🍕 Fractions", "Compare and identify fractions."],
+            ["📐 Geometry", "Angles and shapes."],
+            ["📊 Data", "Graphs and data."],
+            ["🧠 Word Problems", "Solve multi-step problems."]
+        ]
+
+    },
+
+    "4": {
+
+        title: "Grade 4 Mathematics",
+
+        description:
+            "Develop deeper understanding of multi-digit operations, fractions and geometry.",
+
+        lessons: [
+            ["🔢 Place Value", "Large numbers and place value."],
+            ["✖️ Multiplication", "Multi-digit multiplication."],
+            ["➗ Division", "Long division foundations."],
+            ["🍕 Fractions", "Equivalent fractions."],
+            ["📐 Angles", "Measure and classify angles."],
+            ["📊 Data", "Interpret charts and graphs."]
+        ]
+
+    },
+
+    "5": {
+
+        title: "Grade 5 Mathematics",
+
+        description:
+            "Prepare students for middle-school mathematics through fractions, decimals and algebraic thinking.",
+
+        lessons: [
+            ["🍕 Fractions", "Operations with fractions."],
+            ["🔢 Decimals", "Decimal operations."],
+            ["📐 Geometry", "Area and volume."],
+            ["📊 Data", "Data interpretation."],
+            ["➗ Division", "Advanced division."],
+            ["🧠 Problem Solving", "Complex word problems."]
+        ]
+
+    },
+
+    "6": {
+
+        title: "Grade 6 Mathematics",
+
+        description:
+            "Transition into more abstract mathematics and pre-algebra.",
+
+        lessons: [
+            ["➗ Ratios", "Ratios and proportional reasoning."],
+            ["🍕 Fractions", "Operations with rational numbers."],
+            ["🔢 Integers", "Positive and negative numbers."],
+            ["📈 Expressions", "Introduction to algebraic expressions."],
+            ["📐 Geometry", "Area, volume and surface area."],
+            ["📊 Statistics", "Data and averages."]
+        ]
+
+    },
+
+    "7": {
+
+        title: "Grade 7 Mathematics",
+
+        description:
+            "Develop algebraic reasoning, proportional relationships and statistical thinking.",
+
+        lessons: [
+            ["📈 Algebra", "Expressions and equations."],
+            ["⚖️ Proportions", "Ratios and proportional relationships."],
+            ["📊 Statistics", "Mean, median and data."],
+            ["📐 Geometry", "Angles and geometric relationships."],
+            ["💯 Percentages", "Percent increase and decrease."],
+            ["🧠 Problem Solving", "Multi-step mathematical problems."]
+        ]
+
+    },
+
+    "8": {
+
+        title: "Grade 8 Mathematics",
+
+        description:
+            "Build strong foundations in algebra, functions, geometry and statistics.",
+
+        lessons: [
+            ["📈 Linear Equations", "Solve and graph equations."],
+            ["📊 Functions", "Introduction to functions."],
+            ["📐 Geometry", "Transformations and geometry."],
+            ["🔢 Exponents", "Powers and scientific notation."],
+            ["📊 Statistics", "Analyze data."],
+            ["🧠 Problem Solving", "Complex mathematical reasoning."]
+        ]
+
+    },
+
+    "9": {
+
+        title: "Grade 9 Mathematics",
+
+        description:
+            "Develop deeper algebraic and geometric reasoning.",
+
+        lessons: [
+            ["📈 Algebra", "Advanced algebraic expressions."],
+            ["📊 Functions", "Linear functions."],
+            ["🔢 Exponents", "Exponential relationships."],
+            ["📐 Geometry", "Coordinate geometry."],
+            ["📊 Statistics", "Probability and statistics."],
+            ["🧠 Problem Solving", "Advanced problem solving."]
+        ]
+
+    },
+
+    "10": {
+
+        title: "Grade 10 Mathematics",
+
+        description:
+            "Explore advanced algebra, geometry, functions and mathematical modeling.",
+
+        lessons: [
+            ["📈 Quadratics", "Quadratic equations and graphs."],
+            ["📊 Functions", "Functions and transformations."],
+            ["📐 Geometry", "Advanced geometry."],
+            ["🔢 Polynomials", "Polynomial operations."],
+            ["🎲 Probability", "Probability concepts."],
+            ["📊 Statistics", "Statistical analysis."]
+        ]
+
+    },
+
+    "11": {
+
+        title: "Grade 11 Mathematics",
+
+        description:
+            "Prepare for advanced mathematics and university-level concepts.",
+
+        lessons: [
+            ["📈 Advanced Algebra", "Advanced equations and inequalities."],
+            ["📊 Functions", "Polynomial and rational functions."],
+            ["📐 Trigonometry", "Trigonometric functions."],
+            ["🔢 Sequences", "Arithmetic and geometric sequences."],
+            ["🎲 Probability", "Advanced probability."],
+            ["📊 Statistics", "Statistical reasoning."]
+        ]
+
+    },
+
+    "12": {
+
+        title: "Grade 12 Mathematics",
+
+        description:
+            "Advanced mathematics and preparation for university and standardized examinations.",
+
+        lessons: [
+            ["∫ Calculus", "Limits, derivatives and integrals."],
+            ["📐 Trigonometry", "Advanced trigonometry."],
+            ["📊 Statistics", "Advanced statistical analysis."],
+            ["🎲 Probability", "Advanced probability."],
+            ["📈 Functions", "Advanced function analysis."],
+            ["🎓 Exam Preparation", "Practice and exam preparation."]
+        ]
+
+    }
+
+};
+
+
+function showGrade(grade) {
+
+    const data =
+        gradeData[grade];
+
+    const content =
+        document.getElementById("gradeContent");
+
+
+    let lessonsHTML = "";
+
+
+    data.lessons.forEach(function(lesson) {
+
+        lessonsHTML += `
+
+            <div class="lesson-card">
+
+                <h4>${lesson[0]}</h4>
+
+                <p>
+                    ${lesson[1]}
+                </p>
+
+            </div>
+
+        `;
+
+    });
+
+
+    content.innerHTML = `
+
+        <h3>
+            ${data.title}
+        </h3>
+
+        <p>
+            ${data.description}
+        </p>
+
+        <div class="lesson-list">
+            ${lessonsHTML}
+        </div>
+
+    `;
+
+
+    document
+        .querySelectorAll(".grade-btn")
+        .forEach(function(button) {
+
+            button.classList.remove("active");
+
+        });
+
+}
+
+
+/* =========================
+   KEYBOARD SUPPORT FOR AI
+========================= */
+
+document
+    .getElementById("aiInput")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+
+            sendAIMessage();
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
