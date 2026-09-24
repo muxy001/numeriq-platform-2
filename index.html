@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Numeric | Learn Math. Understand Math. Master Math.</title>
+<title>Numeriq | Learn. Practice. Improve.</title>
 
 <style>
 * {
@@ -41,6 +41,74 @@ a {
 }
 
 /* =========================
+   GLOBAL
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+.container {
+    width: 88%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.primary-btn,
+.secondary-btn,
+.danger-btn {
+    border: none;
+    padding: 13px 21px;
+    border-radius: 9px;
+    font-weight: 700;
+    transition: .2s;
+}
+
+.primary-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.secondary-btn {
+    background: white;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+}
+
+.secondary-btn:hover {
+    background: #eff6ff;
+}
+
+.danger-btn {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 45px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    color: #64748b;
+}
+
+/* =========================
    NAVBAR
 ========================= */
 
@@ -48,7 +116,7 @@ a {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: white;
+    background: rgba(255,255,255,.97);
     border-bottom: 1px solid #e8edf5;
     padding: 15px 6%;
     display: flex;
@@ -68,13 +136,13 @@ a {
 
 .nav-links {
     display: flex;
-    gap: 25px;
     align-items: center;
+    gap: 23px;
 }
 
 .nav-links a {
     font-size: 14px;
-    color: #4b5563;
+    color: #475569;
     font-weight: 600;
 }
 
@@ -85,160 +153,151 @@ a {
 .nav-button {
     background: #2563eb;
     color: white !important;
-    padding: 10px 18px;
+    padding: 10px 17px;
     border-radius: 8px;
 }
 
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    min-height: 650px;
-    padding: 80px 6%;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 60px;
-    align-items: center;
-    background: linear-gradient(135deg, #eef5ff, #ffffff);
+.mobile-menu {
+    display: none;
+    font-size: 25px;
 }
 
-.hero-badge {
+/* =========================
+   WELCOME
+========================= */
+
+.welcome {
+    min-height: 720px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 60px;
+    padding: 80px 6%;
+    background:
+        radial-gradient(circle at 80% 20%, #dbeafe 0, transparent 30%),
+        linear-gradient(135deg,#f0f7ff,#fff);
+}
+
+.badge {
     display: inline-block;
-    background: #dbeafe;
-    color: #1d4ed8;
     padding: 8px 14px;
     border-radius: 30px;
+    background: #dbeafe;
+    color: #1d4ed8;
     font-size: 13px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.hero h1 {
-    font-size: clamp(42px, 6vw, 72px);
-    line-height: 1.05;
+.welcome h1 {
+    font-size: clamp(44px,6vw,74px);
+    line-height: 1.02;
     margin-bottom: 25px;
-    color: #111827;
 }
 
-.hero h1 span {
+.welcome h1 span {
     color: #2563eb;
 }
 
-.hero p {
+.welcome p {
     font-size: 19px;
     color: #64748b;
     max-width: 650px;
     margin-bottom: 30px;
 }
 
-.hero-buttons {
+.welcome-buttons {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
-.primary-btn,
-.secondary-btn {
-    padding: 14px 23px;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: bold;
-    border: none;
-}
-
-.primary-btn {
-    background: #2563eb;
-    color: white;
-}
-
-.primary-btn:hover {
-    background: #1d4ed8;
-}
-
-.secondary-btn {
+.hero-dashboard {
     background: white;
-    color: #2563eb;
-    border: 1px solid #bfdbfe;
-}
-
-.hero-card {
-    background: white;
-    border-radius: 22px;
     padding: 30px;
-    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+    border-radius: 24px;
+    box-shadow: 0 25px 70px rgba(15,23,42,.12);
 }
 
-.progress-header {
-    display: flex;
-    justify-content: space-between;
+.hero-dashboard h3 {
     margin-bottom: 20px;
 }
 
-.progress-number {
-    font-size: 38px;
-    font-weight: bold;
-    color: #2563eb;
-}
-
-.progress-bar {
-    width: 100%;
+.progress {
     height: 10px;
     background: #e5e7eb;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
+    margin: 12px 0 25px;
 }
 
-.progress-fill {
+.progress div {
     height: 100%;
-    width: 72%;
+    width: 74%;
     background: #2563eb;
 }
 
-.mini-cards {
+.stat-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 12px;
-    margin-top: 25px;
 }
 
-.mini-card {
-    padding: 18px;
-    border-radius: 12px;
+.stat {
+    padding: 20px;
     background: #f8fafc;
+    border-radius: 12px;
 }
 
-.mini-card strong {
+.stat strong {
     display: block;
-    font-size: 20px;
-    margin-bottom: 4px;
+    font-size: 27px;
+    color: #2563eb;
 }
 
-.mini-card small {
+.stat small {
     color: #64748b;
 }
 
 /* =========================
-   GENERAL SECTIONS
+   SUBJECTS
 ========================= */
 
-section {
-    padding: 85px 6%;
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
 }
 
-.section-title {
-    text-align: center;
-    max-width: 750px;
-    margin: 0 auto 50px;
+.subject-card {
+    background: white;
+    padding: 28px;
+    border: 1px solid #e5e7eb;
+    border-radius: 17px;
+    transition: .2s;
 }
 
-.section-title h2 {
-    font-size: 38px;
-    margin-bottom: 12px;
+.subject-card:hover {
+    transform: translateY(-4px);
+    border-color: #bfdbfe;
 }
 
-.section-title p {
+.subject-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.subject-card h3 {
+    margin-bottom: 8px;
+}
+
+.subject-card p {
     color: #64748b;
+    font-size: 14px;
+}
+
+.coming-soon {
+    opacity: .7;
 }
 
 /* =========================
@@ -247,21 +306,21 @@ section {
 
 .steps {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(5,1fr);
+    gap: 18px;
 }
 
 .step {
     background: white;
     padding: 25px;
-    border-radius: 16px;
     border: 1px solid #e5e7eb;
+    border-radius: 16px;
     text-align: center;
 }
 
 .step-number {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: #dbeafe;
     color: #2563eb;
@@ -272,486 +331,507 @@ section {
     font-weight: bold;
 }
 
-.step h3 {
-    margin-bottom: 8px;
-}
-
-.step p {
-    color: #64748b;
-    font-size: 14px;
-}
-
 /* =========================
-   CURRICULUM
+   CAREERS
 ========================= */
 
-.curriculum {
+.career-section {
     background: #0f172a;
     color: white;
 }
 
-.curriculum .section-title p {
+.career-section .section-title p {
     color: #94a3b8;
 }
 
-.grade-selector {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
+.career-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
 }
 
-.grade-btn {
-    border: 1px solid #334155;
+.career-card {
     background: #1e293b;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 8px;
-}
-
-.grade-btn:hover,
-.grade-btn.active {
-    background: #2563eb;
-    border-color: #2563eb;
-}
-
-.grade-content {
-    max-width: 1100px;
-    margin: auto;
-    background: #1e293b;
-    border-radius: 20px;
     padding: 35px;
+    border-radius: 20px;
+    border: 1px solid #334155;
 }
 
-.grade-content h3 {
-    font-size: 28px;
-    margin-bottom: 10px;
+.career-card h3 {
+    margin-bottom: 12px;
 }
 
-.grade-content > p {
+.career-card p {
     color: #cbd5e1;
+    margin-bottom: 20px;
+}
+
+.career-list {
+    list-style: none;
     margin-bottom: 25px;
 }
 
-.lesson-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.lesson-card {
-    background: #0f172a;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #334155;
-}
-
-.lesson-card h4 {
-    margin-bottom: 8px;
-}
-
-.lesson-card p {
-    font-size: 13px;
-    color: #94a3b8;
+.career-list li {
+    margin: 10px 0;
+    color: #cbd5e1;
 }
 
 /* =========================
-   KINDERGARTEN / GAMES
+   AUTH PAGES
 ========================= */
 
-.games-section {
-    background: #fff7ed;
+.page {
+    min-height: calc(100vh - 75px);
+    padding: 70px 5%;
 }
 
-.games-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.game-card {
-    background: white;
-    padding: 25px;
-    border-radius: 18px;
-    text-align: center;
-    border: 2px solid #fed7aa;
-    transition: 0.2s;
-}
-
-.game-card:hover {
-    transform: translateY(-5px);
-}
-
-.game-icon {
-    font-size: 48px;
-    margin-bottom: 15px;
-}
-
-.game-card h3 {
-    margin-bottom: 8px;
-}
-
-.game-card p {
-    color: #64748b;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.play-btn {
-    border: none;
-    background: #f97316;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-/* =========================
-   FEATURES
-========================= */
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.feature {
-    background: white;
-    padding: 28px;
-    border-radius: 16px;
-    border: 1px solid #e5e7eb;
-}
-
-.feature-icon {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.feature h3 {
-    margin-bottom: 8px;
-}
-
-.feature p {
-    color: #64748b;
-    font-size: 14px;
-}
-
-/* =========================
-   AI ASSISTANT
-========================= */
-
-.ai-section {
-    background: #eff6ff;
-}
-
-.ai-box {
-    max-width: 900px;
+.auth-wrapper {
+    max-width: 1000px;
     margin: auto;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
     background: white;
     border-radius: 22px;
-    box-shadow: 0 15px 50px rgba(37, 99, 235, 0.1);
     overflow: hidden;
+    box-shadow: 0 20px 60px rgba(15,23,42,.1);
 }
 
-.ai-header {
+.auth-info {
     background: #2563eb;
     color: white;
-    padding: 25px;
+    padding: 45px;
 }
 
-.ai-header h3 {
-    font-size: 25px;
-}
-
-.ai-header p {
-    opacity: 0.9;
-}
-
-.chat-area {
-    min-height: 300px;
-    padding: 25px;
-}
-
-.message {
-    max-width: 75%;
-    padding: 14px 17px;
-    border-radius: 14px;
+.auth-info h1 {
+    font-size: 38px;
     margin-bottom: 15px;
 }
 
-.ai-message {
-    background: #eff6ff;
+.auth-info p {
+    opacity: .9;
 }
 
-.user-message {
-    background: #2563eb;
-    color: white;
-    margin-left: auto;
+.auth-info ul {
+    margin-top: 25px;
+    list-style: none;
 }
 
-.ai-input {
-    display: flex;
-    gap: 10px;
-    padding: 20px;
-    border-top: 1px solid #e5e7eb;
+.auth-info li {
+    margin: 12px 0;
 }
 
-.ai-input input {
-    flex: 1;
-    padding: 13px;
-    border: 1px solid #d1d5db;
-    border-radius: 9px;
+.auth-form {
+    padding: 45px;
 }
 
-/* =========================
-   VIDEO LESSONS
-========================= */
-
-.video-section {
-    background: white;
+.auth-form h2 {
+    margin-bottom: 7px;
 }
 
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.video-card {
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
-    overflow: hidden;
-    background: white;
-}
-
-.video-placeholder {
-    height: 180px;
-    background: linear-gradient(135deg, #1e3a8a, #2563eb);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 50px;
-}
-
-.video-info {
-    padding: 20px;
-}
-
-.video-info h3 {
-    margin-bottom: 8px;
-}
-
-.video-info p {
+.auth-form > p {
     color: #64748b;
-    font-size: 14px;
+    margin-bottom: 25px;
 }
 
-/* =========================
-   ASSESSMENT
-========================= */
+.form-group {
+    margin-bottom: 17px;
+}
 
-.assessment {
+.form-group label {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+}
+
+.role-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.role-card {
+    padding: 15px 10px;
+    text-align: center;
+    border: 1px solid #dbe2ea;
+    border-radius: 10px;
+    cursor: pointer;
     background: #f8fafc;
 }
 
-.assessment-box {
-    max-width: 800px;
-    margin: auto;
-    background: white;
-    padding: 35px;
-    border-radius: 20px;
-    border: 1px solid #e5e7eb;
-}
-
-.question {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 25px 0;
-}
-
-.answers {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-}
-
-.answer-btn {
-    background: white;
-    border: 1px solid #cbd5e1;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 16px;
-}
-
-.answer-btn:hover {
+.role-card.active {
     border-color: #2563eb;
     background: #eff6ff;
+    color: #2563eb;
 }
 
-.feedback {
-    margin-top: 20px;
+.role-card strong {
+    display: block;
+}
+
+.role-card small {
+    color: #64748b;
+}
+
+.full-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 9px;
     font-weight: bold;
+}
+
+.switch-auth {
+    margin-top: 20px;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.switch-auth a {
+    color: #2563eb;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /* =========================
    DASHBOARD
 ========================= */
 
-.dashboard-grid {
+.dashboard-layout {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: 235px 1fr;
+    min-height: calc(100vh - 75px);
+}
+
+.sidebar {
+    background: #0f172a;
+    color: white;
+    padding: 25px 15px;
+}
+
+.sidebar h3 {
+    padding: 0 12px 20px;
+    color: #60a5fa;
+}
+
+.sidebar-item {
+    padding: 12px;
+    border-radius: 8px;
+    margin: 4px 0;
+    cursor: pointer;
+    color: #cbd5e1;
+}
+
+.sidebar-item:hover,
+.sidebar-item.active {
+    background: #1e293b;
+    color: white;
+}
+
+.dashboard-main {
+    padding: 35px;
+    background: #f8fafc;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 30px;
+}
+
+.dashboard-header p {
+    color: #64748b;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+    margin-bottom: 25px;
 }
 
 .dashboard-card {
     background: white;
-    padding: 25px;
-    border-radius: 15px;
+    padding: 23px;
+    border-radius: 14px;
     border: 1px solid #e5e7eb;
 }
 
 .dashboard-card span {
     color: #64748b;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .dashboard-card strong {
     display: block;
-    font-size: 30px;
-    margin-top: 8px;
+    margin-top: 6px;
+    font-size: 28px;
     color: #2563eb;
 }
 
-/* =========================
-   TEACHER / ADMIN
-========================= */
-
-.teacher-section {
-    background: #f1f5f9;
-}
-
-.admin-panel {
-    max-width: 1100px;
-    margin: auto;
+.content-panel {
     background: white;
-    padding: 30px;
-    border-radius: 20px;
-}
-
-.admin-actions {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.admin-action {
+    padding: 28px;
+    border-radius: 16px;
     border: 1px solid #e5e7eb;
-    padding: 20px;
-    border-radius: 12px;
-    background: #f8fafc;
-    cursor: pointer;
+    margin-bottom: 20px;
 }
 
-.admin-action:hover {
-    border-color: #2563eb;
-}
-
-.admin-action strong {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.admin-action span {
-    font-size: 13px;
-    color: #64748b;
-}
-
-/* =========================
-   FOUNDERS
-========================= */
-
-.founders {
-    background: white;
-}
-
-.founders-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    max-width: 950px;
-    margin: auto;
-}
-
-.founder {
-    text-align: center;
-    background: #f8fafc;
-    padding: 35px 20px;
-    border-radius: 18px;
-}
-
-.founder-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: #dbeafe;
-    color: #2563eb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto auto 15px;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.founder h3 {
-    margin-bottom: 5px;
-}
-
-.founder p {
-    color: #64748b;
-}
-
-.developer-credit {
-    margin: 40px auto 0;
-    text-align: center;
-    max-width: 700px;
-    padding: 25px;
-    border-radius: 15px;
-    background: #eff6ff;
-}
-
-.developer-credit strong {
-    color: #2563eb;
-}
-
-/* =========================
-   CTA
-========================= */
-
-.cta {
-    background: #2563eb;
-    color: white;
-    text-align: center;
-}
-
-.cta h2 {
-    font-size: 40px;
+.content-panel h3 {
     margin-bottom: 15px;
 }
 
-.cta p {
-    opacity: 0.9;
-    margin-bottom: 25px;
+.activity-list {
+    display: grid;
+    gap: 12px;
 }
 
-.cta .primary-btn {
+.activity {
+    padding: 15px;
+    border-radius: 10px;
+    background: #f8fafc;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.activity small {
+    color: #64748b;
+}
+
+.status {
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+    background: #dcfce7;
+    color: #166534;
+    height: fit-content;
+}
+
+/* =========================
+   SUBJECT LEARNING
+========================= */
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.lesson {
+    border: 1px solid #e5e7eb;
+    padding: 22px;
+    border-radius: 14px;
+}
+
+.lesson-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.lesson p {
+    color: #64748b;
+    font-size: 14px;
+    margin: 8px 0 15px;
+}
+
+.lesson button {
+    width: 100%;
+}
+
+/* =========================
+   TEACHER
+========================= */
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+}
+
+.action-card {
+    padding: 25px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #f8fafc;
+}
+
+.action-card h4 {
+    margin-bottom: 7px;
+}
+
+.action-card p {
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 13px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    color: #475569;
+    background: #f8fafc;
+}
+
+/* =========================
+   PRICING
+========================= */
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.price-card {
     background: white;
+    border: 1px solid #e5e7eb;
+    padding: 35px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.price-card.featured {
+    border: 2px solid #2563eb;
+}
+
+.price-card .tag {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 40px;
+    font-weight: 800;
     color: #2563eb;
+    margin: 12px 0;
+}
+
+.price span {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.price-card ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.price-card li {
+    margin: 10px 0;
+}
+
+/* =========================
+   PAYMENT
+========================= */
+
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.payment-method {
+    padding: 17px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.payment-method.active {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.payment-form {
+    display: none;
+}
+
+.payment-form.active {
+    display: block;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    background: rgba(15,23,42,.7);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 650px;
+    max-height: 92vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+}
+
+.close {
+    float: right;
+    font-size: 27px;
+    cursor: pointer;
 }
 
 /* =========================
@@ -767,11 +847,11 @@ footer {
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
+    gap: 35px;
 }
 
 footer h3 {
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
 
 footer p,
@@ -787,7 +867,7 @@ footer a {
 
 .footer-bottom {
     border-top: 1px solid #334155;
-    margin-top: 40px;
+    margin-top: 35px;
     padding-top: 20px;
     text-align: center;
     color: #64748b;
@@ -795,151 +875,87 @@ footer a {
 }
 
 /* =========================
-   MODAL
-========================= */
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 2000;
-    background: rgba(15, 23, 42, 0.65);
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.modal-content {
-    width: 100%;
-    max-width: 500px;
-    background: white;
-    border-radius: 18px;
-    padding: 30px;
-}
-
-.close {
-    float: right;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.modal-content h2 {
-    margin-bottom: 8px;
-}
-
-.modal-content p {
-    color: #64748b;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 6px;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-}
-
-.full-btn {
-    width: 100%;
-    border: none;
-    padding: 14px;
-    background: #2563eb;
-    color: white;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-/* =========================
    RESPONSIVE
 ========================= */
 
-@media (max-width: 900px) {
+@media(max-width:950px) {
 
-    .hero {
+    .welcome,
+    .career-grid,
+    .auth-wrapper {
         grid-template-columns: 1fr;
     }
 
+    .subject-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
     .steps {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
     }
 
-    .features-grid,
-    .video-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .dashboard-layout {
+        grid-template-columns: 1fr;
     }
 
-    .games-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .sidebar {
+        display: none;
     }
 
-    .dashboard-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .dashboard-cards {
+        grid-template-columns: repeat(2,1fr);
     }
 
-    .admin-actions {
-        grid-template-columns: repeat(2, 1fr);
+    .learning-grid,
+    .action-grid {
+        grid-template-columns: repeat(2,1fr);
     }
 
     .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
     }
 }
 
-@media (max-width: 650px) {
-
-    .navbar {
-        padding: 14px 5%;
-    }
+@media(max-width:650px) {
 
     .nav-links {
         display: none;
     }
 
-    section {
+    .mobile-menu {
+        display: block;
+    }
+
+    .welcome {
         padding: 60px 5%;
     }
 
-    .hero {
-        padding: 60px 5%;
+    .welcome h1 {
+        font-size: 43px;
     }
 
-    .hero h1 {
-        font-size: 42px;
-    }
-
+    .subject-grid,
     .steps,
-    .features-grid,
-    .games-grid,
-    .video-grid,
-    .dashboard-grid,
-    .founders-grid,
-    .lesson-list,
-    .admin-actions {
-        grid-template-columns: 1fr;
-    }
-
-    .answers {
-        grid-template-columns: 1fr;
-    }
-
+    .dashboard-cards,
+    .learning-grid,
+    .action-grid,
+    .pricing-grid,
+    .payment-methods,
     .footer-grid {
         grid-template-columns: 1fr;
     }
 
-    .question {
-        font-size: 22px;
+    .auth-form,
+    .auth-info {
+        padding: 30px;
+    }
+
+    .page {
+        padding: 45px 5%;
+    }
+
+    .dashboard-main {
+        padding: 20px;
     }
 }
 </style>
@@ -947,108 +963,119 @@ footer a {
 
 <body>
 
-<!-- =========================
+<!-- =========================================================
      NAVBAR
-========================= -->
+========================================================= -->
 
 <nav class="navbar">
 
-    <a href="#" class="logo">
-        Numeric<span>.</span>
+    <a href="#" class="logo" onclick="showPage('welcome')">
+        Numeriq<span>.</span>
     </a>
 
     <div class="nav-links">
-        <a href="#learn">Learn</a>
-        <a href="#games">Games</a>
-        <a href="#ai">AI Assistant</a>
-        <a href="#videos">Videos</a>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#about">About</a>
 
-        <a href="#" class="nav-button" onclick="openModal()">
-            Get Started
+        <a href="#subjects">Subjects</a>
+
+        <a href="#how">How It Works</a>
+
+        <a href="#careers">Careers</a>
+
+        <a href="#" onclick="showPage('login')">
+            Login
         </a>
+
+        <a href="#" class="nav-button"
+           onclick="showPage('signup')">
+            Sign Up
+        </a>
+
+    </div>
+
+    <div class="mobile-menu">
+        ☰
     </div>
 
 </nav>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- =========================================================
+     WELCOME PAGE
+========================================================= -->
 
-<section class="hero">
+<main id="welcomePage">
+
+<section class="welcome">
 
     <div>
 
-        <div class="hero-badge">
-            Mathematics • Kindergarten → Grade 12
+        <div class="badge">
+            NUMERIQ • EDUCATION PLATFORM
         </div>
 
         <h1>
-            Stop guessing what you don't know.
-            <span>Know your math.</span>
+            Learn smarter.
+            <span>Grow further.</span>
         </h1>
 
         <p>
-            Numeric is a personalized mathematics learning platform
-            designed to help students assess their skills, understand
-            difficult concepts, practice intelligently, and improve
-            with confidence.
+            Numeriq is an online learning platform designed to
+            help students learn through structured lessons,
+            interactive activities, video classes, AI-assisted
+            support and qualified educators.
         </p>
 
-        <div class="hero-buttons">
+        <div class="welcome-buttons">
 
-            <button class="primary-btn" onclick="openModal()">
-                Start Learning
+            <button class="primary-btn"
+                    onclick="showPage('signup')">
+                Get Started
             </button>
 
-            <a href="#learn" class="secondary-btn">
-                Explore Lessons
-            </a>
+            <button class="secondary-btn"
+                    onclick="showPage('login')">
+                Login
+            </button>
 
         </div>
 
     </div>
 
 
-    <div class="hero-card">
+    <div class="hero-dashboard">
 
-        <div class="progress-header">
+        <h3>
+            Student Learning Overview
+        </h3>
 
-            <div>
-                <small>Your Learning Progress</small>
-                <div class="progress-number">72%</div>
+        <small>
+            Mathematics • Grade 8
+        </small>
+
+        <div class="progress">
+            <div></div>
+        </div>
+
+        <div class="stat-grid">
+
+            <div class="stat">
+                <strong>74%</strong>
+                <small>Overall Progress</small>
             </div>
 
-            <div>📈</div>
-
-        </div>
-
-        <div class="progress-bar">
-            <div class="progress-fill"></div>
-        </div>
-
-        <div class="mini-cards">
-
-            <div class="mini-card">
-                <strong>18</strong>
+            <div class="stat">
+                <strong>24</strong>
                 <small>Lessons Completed</small>
             </div>
 
-            <div class="mini-card">
-                <strong>124</strong>
-                <small>Questions Practiced</small>
+            <div class="stat">
+                <strong>186</strong>
+                <small>Activities</small>
             </div>
 
-            <div class="mini-card">
-                <strong>8</strong>
+            <div class="stat">
+                <strong>9 🔥</strong>
                 <small>Day Streak</small>
-            </div>
-
-            <div class="mini-card">
-                <strong>A−</strong>
-                <small>Current Level</small>
             </div>
 
         </div>
@@ -1058,19 +1085,103 @@ footer a {
 </section>
 
 
-<!-- =========================
-     HOW NUMERIC WORKS
-========================= -->
+<!-- SUBJECTS -->
 
-<section>
+<section class="section" id="subjects">
 
     <div class="section-title">
 
-        <h2>How Numeric Works</h2>
+        <h2>Learn With Numeriq</h2>
 
         <p>
-            A learning system designed around the student's actual
-            mathematical needs.
+            Our initial learning platform launches with three
+            core subjects, with STEM expansion planned for future
+            releases.
+        </p>
+
+    </div>
+
+
+    <div class="subject-grid">
+
+        <div class="subject-card">
+
+            <div class="subject-icon">➗</div>
+
+            <h3>Mathematics</h3>
+
+            <p>
+                Kindergarten through Grade 12 mathematics,
+                including lessons, activities, videos and
+                guided practice.
+            </p>
+
+        </div>
+
+
+        <div class="subject-card">
+
+            <div class="subject-icon">📖</div>
+
+            <h3>English</h3>
+
+            <p>
+                Reading, writing, grammar, vocabulary,
+                comprehension and communication skills.
+            </p>
+
+        </div>
+
+
+        <div class="subject-card">
+
+            <div class="subject-icon">🇫🇷</div>
+
+            <h3>French</h3>
+
+            <p>
+                French language learning including vocabulary,
+                grammar, reading and communication.
+            </p>
+
+        </div>
+
+
+        <div class="subject-card coming-soon">
+
+            <div class="subject-icon">🔬</div>
+
+            <h3>STEM</h3>
+
+            <p>
+                Science, technology, engineering and mathematics
+                expansion coming in a future stage.
+            </p>
+
+            <br>
+
+            <strong>
+                Coming Soon
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section class="section" id="how">
+
+    <div class="section-title">
+
+        <h2>How Numeriq Works</h2>
+
+        <p>
+            A complete learning environment connecting students,
+            educators and administrators.
         </p>
 
     </div>
@@ -1080,19 +1191,19 @@ footer a {
 
         <div class="step">
             <div class="step-number">1</div>
-            <h3>Assess</h3>
+            <h3>Sign Up</h3>
             <p>
-                Discover what the student understands and where
-                they need support.
+                Create an account as a student, teacher or
+                authorized administrator.
             </p>
         </div>
 
         <div class="step">
             <div class="step-number">2</div>
-            <h3>Identify</h3>
+            <h3>Choose</h3>
             <p>
-                Identify strengths, weaknesses and missing
-                mathematical foundations.
+                Select subjects, grade level and your preferred
+                learning plan.
             </p>
         </div>
 
@@ -1100,8 +1211,8 @@ footer a {
             <div class="step-number">3</div>
             <h3>Learn</h3>
             <p>
-                Learn through structured lessons, explanations,
-                visuals and videos.
+                Access lessons, activities, classes and
+                educational videos.
             </p>
         </div>
 
@@ -1109,17 +1220,16 @@ footer a {
             <div class="step-number">4</div>
             <h3>Practice</h3>
             <p>
-                Practice with questions that match the student's
-                learning level.
+                Complete assignments and interactive activities.
             </p>
         </div>
 
         <div class="step">
             <div class="step-number">5</div>
-            <h3>Improve</h3>
+            <h3>Progress</h3>
             <p>
-                Track progress and continuously strengthen
-                mathematical understanding.
+                Track performance and receive support from
+                educators and AI-assisted learning tools.
             </p>
         </div>
 
@@ -1128,213 +1238,74 @@ footer a {
 </section>
 
 
-<!-- =========================
-     CURRICULUM
-========================= -->
+<!-- CAREERS -->
 
-<section class="curriculum" id="learn">
+<section class="section career-section" id="careers">
 
     <div class="section-title">
 
-        <h2>Math From Kindergarten to Grade 12</h2>
+        <h2>Career at Numeriq</h2>
 
         <p>
-            A progressive mathematics curriculum that grows with
-            the student.
+            Help us build a modern learning platform for students
+            around the world.
         </p>
 
     </div>
 
 
-    <div class="grade-selector">
+    <div class="career-grid">
 
-        <button class="grade-btn active" onclick="showGrade('K')">
-            Kindergarten
-        </button>
+        <div class="career-card">
 
-        <button class="grade-btn" onclick="showGrade('1')">
-            Grade 1
-        </button>
-
-        <button class="grade-btn" onclick="showGrade('2')">
-            Grade 2
-        </button>
-
-        <button class="grade-btn" onclick="showGrade('3')">
-            Grade 3
-        </button>
-
-        <button class="grade-btn" onclick="showGrade('4')">
-            Grade 4
-        </button>
-
-        <button class="grade-btn" onclick="showGrade('5')">
-            Grade 5
-        </button>
-
-        <button class="grade-btn" onclick="showGrade('6')">
-            Grade 6
-        </button>
-
-        <button class="grade-btn" onclick="showGrade('7')">
-            Grade 7
-        </button>
-
-        <button class="grade-btn" onclick="showGrade('8')">
-            Grade 8
-        </button>
-
-        <button class="grade-btn" onclick="showGrade('9')">
-            Grade 9
-        </button>
-
-        <button class="grade-btn" onclick="showGrade('10')">
-            Grade 10
-        </button>
-
-        <button class="grade-btn" onclick="showGrade('11')">
-            Grade 11
-        </button>
-
-        <button class="grade-btn" onclick="showGrade('12')">
-            Grade 12
-        </button>
-
-    </div>
-
-
-    <div class="grade-content" id="gradeContent">
-
-        <h3>Kindergarten Mathematics</h3>
-
-        <p>
-            Fun, visual and interactive learning designed to build
-            early mathematical confidence.
-        </p>
-
-        <div class="lesson-list">
-
-            <div class="lesson-card">
-                <h4>🔢 Numbers 1–20</h4>
-                <p>Recognize, count and identify numbers.</p>
-            </div>
-
-            <div class="lesson-card">
-                <h4>🔷 Shapes</h4>
-                <p>Explore circles, squares, triangles and more.</p>
-            </div>
-
-            <div class="lesson-card">
-                <h4>🎨 Colors & Patterns</h4>
-                <p>Discover patterns through visual activities.</p>
-            </div>
-
-            <div class="lesson-card">
-                <h4>🍎 Counting Objects</h4>
-                <p>Learn numbers using real-world objects.</p>
-            </div>
-
-            <div class="lesson-card">
-                <h4>📏 Measurement</h4>
-                <p>Explore big, small, long and short.</p>
-            </div>
-
-            <div class="lesson-card">
-                <h4>🎮 Math Games</h4>
-                <p>Build confidence through interactive play.</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     KINDERGARTEN GAMES
-========================= -->
-
-<section class="games-section" id="games">
-
-    <div class="section-title">
-
-        <h2>Learn Math Through Play</h2>
-
-        <p>
-            Especially designed for Kindergarten and early learners.
-            Learn mathematical concepts through visual activities,
-            games and interaction.
-        </p>
-
-    </div>
-
-
-    <div class="games-grid">
-
-        <div class="game-card">
-
-            <div class="game-icon">🔢</div>
-
-            <h3>Number Hunt</h3>
+            <h3>
+                Become a Numeriq Educator
+            </h3>
 
             <p>
-                Find the correct number before time runs out.
+                We are building a network of educators who can
+                create lessons, teach classes, design activities
+                and support students.
             </p>
 
-            <button class="play-btn" onclick="playGame('Number Hunt')">
-                Play
+            <ul class="career-list">
+
+                <li>✓ Create educational content</li>
+
+                <li>✓ Teach online classes</li>
+
+                <li>✓ Create assignments and activities</li>
+
+                <li>✓ Upload educational videos</li>
+
+                <li>✓ Monitor student learning</li>
+
+            </ul>
+
+            <button class="primary-btn"
+                    onclick="showCareerModal()">
+                Apply as an Educator
             </button>
 
         </div>
 
 
-        <div class="game-card">
+        <div class="career-card">
 
-            <div class="game-icon">🍎</div>
-
-            <h3>Count the Apples</h3>
-
-            <p>
-                Practice counting using colorful objects.
-            </p>
-
-            <button class="play-btn" onclick="playGame('Count the Apples')">
-                Play
-            </button>
-
-        </div>
-
-
-        <div class="game-card">
-
-            <div class="game-icon">🔷</div>
-
-            <h3>Shape Match</h3>
+            <h3>
+                Join the Future of Learning
+            </h3>
 
             <p>
-                Match shapes and learn their names.
+                Educators can apply through our online application
+                process. Applicants can submit their CV and answer
+                questions about their experience, qualifications
+                and teaching approach.
             </p>
 
-            <button class="play-btn" onclick="playGame('Shape Match')">
-                Play
-            </button>
-
-        </div>
-
-
-        <div class="game-card">
-
-            <div class="game-icon">🧩</div>
-
-            <h3>Pattern Puzzle</h3>
-
-            <p>
-                Complete simple mathematical patterns.
-            </p>
-
-            <button class="play-btn" onclick="playGame('Pattern Puzzle')">
-                Play
+            <button class="secondary-btn"
+                    onclick="showCareerModal()">
+                Career Application
             </button>
 
         </div>
@@ -1343,241 +1314,127 @@ footer a {
 
 </section>
 
-
-<!-- =========================
-     FEATURES
-========================= -->
-
-<section>
-
-    <div class="section-title">
-
-        <h2>Everything Students Need</h2>
-
-        <p>
-            Numeric brings assessment, lessons, practice,
-            videos, games and intelligent support into one place.
-        </p>
-
-    </div>
+</main>
 
 
-    <div class="features-grid">
+<!-- =========================================================
+     LOGIN PAGE
+========================================================= -->
 
-        <div class="feature">
-            <div class="feature-icon">🧠</div>
-            <h3>Diagnostic Assessment</h3>
-            <p>
-                Understand what students know before deciding
-                what they should learn next.
-            </p>
-        </div>
+<section id="loginPage"
+         class="page hidden">
 
+    <div class="auth-wrapper">
 
-        <div class="feature">
-            <div class="feature-icon">📚</div>
-            <h3>In-Depth Math Lessons</h3>
-            <p>
-                Structured explanations, worked examples,
-                activities and practice.
-            </p>
-        </div>
+        <div class="auth-info">
 
-
-        <div class="feature">
-            <div class="feature-icon">🤖</div>
-            <h3>AI Learning Assistant</h3>
-            <p>
-                Students can ask questions and receive
-                step-by-step learning support.
-            </p>
-        </div>
-
-
-        <div class="feature">
-            <div class="feature-icon">🎮</div>
-            <h3>Math Games</h3>
-            <p>
-                Interactive learning experiences for younger
-                students.
-            </p>
-        </div>
-
-
-        <div class="feature">
-            <div class="feature-icon">🎥</div>
-            <h3>Video Lessons</h3>
-            <p>
-                Teachers and administrators can provide
-                pre-recorded lessons.
-            </p>
-        </div>
-
-
-        <div class="feature">
-            <div class="feature-icon">📊</div>
-            <h3>Progress Tracking</h3>
-            <p>
-                Monitor lessons, practice, scores and
-                learning progress.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     AI ASSISTANT
-========================= -->
-
-<section class="ai-section" id="ai">
-
-    <div class="section-title">
-
-        <h2>Meet Your AI Learning Assistant</h2>
-
-        <p>
-            Students can ask questions whenever they get stuck.
-        </p>
-
-    </div>
-
-
-    <div class="ai-box">
-
-        <div class="ai-header">
-
-            <h3>🤖 Numeric AI</h3>
+            <h1>
+                Welcome back.
+            </h1>
 
             <p>
-                Your personal mathematics learning assistant.
+                Sign in to continue your Numeriq experience.
             </p>
 
-        </div>
+            <ul>
 
+                <li>✓ Access your learning dashboard</li>
 
-        <div class="chat-area" id="chatArea">
+                <li>✓ Continue lessons</li>
 
-            <div class="message ai-message">
+                <li>✓ Track progress</li>
 
-                👋 Hi! I'm your Numeric AI learning assistant.
-                What math topic would you like help with?
+                <li>✓ Connect with educators</li>
 
-            </div>
-
-            <div class="message user-message">
-
-                I don't understand fractions.
-
-            </div>
-
-            <div class="message ai-message">
-
-                No problem! Think about a pizza 🍕 divided into
-                4 equal pieces. If you have one piece, you have
-                <strong>1/4</strong> of the pizza.
-
-                <br><br>
-
-                Would you like to try a quick fraction question?
-
-            </div>
+            </ul>
 
         </div>
 
 
-        <div class="ai-input">
+        <div class="auth-form">
 
-            <input
-                type="text"
-                id="aiInput"
-                placeholder="Ask Numeric AI a math question..."
-            >
+            <h2>Login to Numeriq</h2>
 
-            <button class="primary-btn" onclick="sendAIMessage()">
-                Ask
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
+            <p>
+                Select your account type.
+            </p>
 
 
-<!-- =========================
-     VIDEO LESSONS
-========================= -->
+            <div class="role-grid">
 
-<section class="video-section" id="videos">
+                <div class="role-card active"
+                     onclick="selectLoginRole(this,'student')">
 
-    <div class="section-title">
+                    👨‍🎓
+                    <strong>Student</strong>
+                    <small>Learn</small>
 
-        <h2>Learn From Video Lessons</h2>
-
-        <p>
-            Teachers and administrators can upload pre-recorded
-            lessons for students to watch anytime.
-        </p>
-
-    </div>
+                </div>
 
 
-    <div class="video-grid">
+                <div class="role-card"
+                     onclick="selectLoginRole(this,'teacher')">
 
-        <div class="video-card">
+                    👩‍🏫
+                    <strong>Teacher</strong>
+                    <small>Educate</small>
 
-            <div class="video-placeholder">
-                ▶
-            </div>
+                </div>
 
-            <div class="video-info">
 
-                <h3>Introduction to Fractions</h3>
+                <div class="role-card"
+                     onclick="selectLoginRole(this,'admin')">
 
-                <p>
-                    Grade 5 • Fractions • 18 minutes
-                </p>
+                    🛡️
+                    <strong>Admin</strong>
+                    <small>Manage</small>
+
+                </div>
 
             </div>
 
-        </div>
+
+            <form onsubmit="loginUser(event)">
+
+                <div class="form-group">
+
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        required
+                        placeholder="you@example.com">
+
+                </div>
 
 
-        <div class="video-card">
+                <div class="form-group">
 
-            <div class="video-placeholder">
-                ▶
-            </div>
+                    <label>Password</label>
 
-            <div class="video-info">
+                    <input
+                        type="password"
+                        required
+                        placeholder="Enter your password">
 
-                <h3>Solving Linear Equations</h3>
-
-                <p>
-                    Grade 8 • Algebra • 24 minutes
-                </p>
-
-            </div>
-
-        </div>
+                </div>
 
 
-        <div class="video-card">
+                <button class="full-btn">
+                    Login
+                </button>
 
-            <div class="video-placeholder">
-                ▶
-            </div>
+            </form>
 
-            <div class="video-info">
 
-                <h3>Introduction to Calculus</h3>
+            <div class="switch-auth">
 
-                <p>
-                    Grade 12 • Calculus • 31 minutes
-                </p>
+                Don't have an account?
+
+                <a onclick="showPage('signup')">
+                    Sign up
+                </a>
 
             </div>
 
@@ -1588,402 +1445,1386 @@ footer a {
 </section>
 
 
-<!-- =========================
-     ASSESSMENT
-========================= -->
+<!-- =========================================================
+     SIGNUP PAGE
+========================================================= -->
 
-<section class="assessment">
+<section id="signupPage"
+         class="page hidden">
 
-    <div class="section-title">
+    <div class="auth-wrapper">
 
-        <h2>Try a Numeric Assessment</h2>
+        <div class="auth-info">
 
-        <p>
-            A simple example of how Numeric can identify
-            mathematical understanding.
-        </p>
+            <h1>
+                Join Numeriq.
+            </h1>
 
-    </div>
+            <p>
+                Choose how you will use the platform.
+            </p>
 
+            <ul>
 
-    <div class="assessment-box">
+                <li>🎓 Student — Learn and practice</li>
 
-        <p>
-            <strong>Example Question</strong>
-        </p>
+                <li>👩‍🏫 Teacher — Teach and create</li>
 
-        <div class="question">
-            Solve: 3x + 5 = 20
-        </div>
+                <li>🛡️ Admin — Manage the platform</li>
 
-
-        <div class="answers">
-
-            <button class="answer-btn" onclick="checkAnswer(3)">
-                x = 3
-            </button>
-
-            <button class="answer-btn" onclick="checkAnswer(5)">
-                x = 5
-            </button>
-
-            <button class="answer-btn" onclick="checkAnswer(7)">
-                x = 7
-            </button>
-
-            <button class="answer-btn" onclick="checkAnswer(10)">
-                x = 10
-            </button>
+            </ul>
 
         </div>
 
 
-        <div id="feedback" class="feedback"></div>
+        <div class="auth-form">
+
+            <h2>Create your account</h2>
+
+            <p>
+                Choose an account type to continue.
+            </p>
+
+
+            <div class="role-grid">
+
+                <div class="role-card active"
+                     onclick="selectSignupRole(this,'student')">
+
+                    👨‍🎓
+                    <strong>Student</strong>
+                    <small>Learn</small>
+
+                </div>
+
+
+                <div class="role-card"
+                     onclick="selectSignupRole(this,'teacher')">
+
+                    👩‍🏫
+                    <strong>Teacher</strong>
+                    <small>Educate</small>
+
+                </div>
+
+
+                <div class="role-card"
+                     onclick="selectSignupRole(this,'admin')">
+
+                    🛡️
+                    <strong>Admin</strong>
+                    <small>Authorized</small>
+
+                </div>
+
+            </div>
+
+
+            <form onsubmit="signupUser(event)">
+
+                <div class="form-group">
+
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        id="signupName"
+                        required
+                        placeholder="Full name">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        required
+                        placeholder="you@example.com">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        required
+                        minlength="6"
+                        placeholder="Create a password">
+
+                </div>
+
+
+                <div id="studentFields">
+
+                    <div class="form-group">
+
+                        <label>Grade</label>
+
+                        <select id="signupGrade">
+
+                            <option>Kindergarten</option>
+                            <option>Grade 1</option>
+                            <option>Grade 2</option>
+                            <option>Grade 3</option>
+                            <option>Grade 4</option>
+                            <option>Grade 5</option>
+                            <option>Grade 6</option>
+                            <option>Grade 7</option>
+                            <option>Grade 8</option>
+                            <option>Grade 9</option>
+                            <option>Grade 10</option>
+                            <option>Grade 11</option>
+                            <option>Grade 12</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div id="teacherFields"
+                     class="hidden">
+
+                    <div class="form-group">
+
+                        <label>Teaching Subject</label>
+
+                        <select>
+
+                            <option>Mathematics</option>
+                            <option>English</option>
+                            <option>French</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div id="adminFields"
+                     class="hidden">
+
+                    <div class="form-group">
+
+                        <label>Admin Authorization Code</label>
+
+                        <input
+                            type="password"
+                            placeholder="Authorization code">
+
+                    </div>
+
+                    <small style="color:#64748b;">
+                        Admin accounts must be authorized by Numeriq.
+                    </small>
+
+                </div>
+
+
+                <button class="full-btn">
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <div class="switch-auth">
+
+                Already have an account?
+
+                <a onclick="showPage('login')">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      STUDENT DASHBOARD
-========================= -->
+========================================================= -->
 
-<section id="dashboard">
+<section id="studentDashboard"
+         class="hidden">
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <h3>Numeriq.</h3>
+
+        <div class="sidebar-item active">
+            🏠 Dashboard
+        </div>
+
+        <div class="sidebar-item"
+             onclick="studentSection('learning')">
+            📚 My Learning
+        </div>
+
+        <div class="sidebar-item">
+            🎥 Classes & Videos
+        </div>
+
+        <div class="sidebar-item">
+            📝 Activities
+        </div>
+
+        <div class="sidebar-item">
+            🤖 AI Assistant
+        </div>
+
+        <div class="sidebar-item">
+            📊 Progress
+        </div>
+
+        <div class="sidebar-item"
+             onclick="showPaymentPage()">
+            💳 Subscription
+        </div>
+
+        <div class="sidebar-item"
+             onclick="logout()">
+            🚪 Logout
+        </div>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <h1>
+                    Student Dashboard
+                </h1>
+
+                <p id="studentWelcome">
+                    Welcome to Numeriq.
+                </p>
+
+            </div>
+
+            <button class="primary-btn"
+                    onclick="showPaymentPage()">
+                Upgrade Plan
+            </button>
+
+        </div>
+
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <span>Overall Progress</span>
+
+                <strong>74%</strong>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <span>Lessons Completed</span>
+
+                <strong>24</strong>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <span>Assignments</span>
+
+                <strong>18</strong>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <span>Learning Streak</span>
+
+                <strong>9 🔥</strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="content-panel">
+
+            <h3>
+                My Subjects
+            </h3>
+
+
+            <div class="learning-grid">
+
+                <div class="lesson">
+
+                    <div class="lesson-icon">
+                        ➗
+                    </div>
+
+                    <h3>Mathematics</h3>
+
+                    <p>
+                        Algebra, geometry, fractions,
+                        functions and more.
+                    </p>
+
+                    <button class="primary-btn"
+                            onclick="alert('Mathematics lessons opened.')">
+                        Continue
+                    </button>
+
+                </div>
+
+
+                <div class="lesson">
+
+                    <div class="lesson-icon">
+                        📖
+                    </div>
+
+                    <h3>English</h3>
+
+                    <p>
+                        Reading, writing, grammar and
+                        vocabulary.
+                    </p>
+
+                    <button class="primary-btn"
+                            onclick="alert('English lessons opened.')">
+                        Continue
+                    </button>
+
+                </div>
+
+
+                <div class="lesson">
+
+                    <div class="lesson-icon">
+                        🇫🇷
+                    </div>
+
+                    <h3>French</h3>
+
+                    <p>
+                        French vocabulary, grammar and
+                        communication.
+                    </p>
+
+                    <button class="primary-btn"
+                            onclick="alert('French lessons opened.')">
+                        Continue
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="content-panel">
+
+            <h3>
+                Recent Learning Activity
+            </h3>
+
+            <div class="activity-list">
+
+                <div class="activity">
+
+                    <div>
+                        <strong>
+                            Algebra: Linear Equations
+                        </strong>
+
+                        <br>
+
+                        <small>
+                            Mathematics • Yesterday
+                        </small>
+
+                    </div>
+
+                    <span class="status">
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <div>
+                        <strong>
+                            English Grammar Activity
+                        </strong>
+
+                        <br>
+
+                        <small>
+                            English • 2 days ago
+                        </small>
+
+                    </div>
+
+                    <span class="status">
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <div>
+                        <strong>
+                            French Vocabulary
+                        </strong>
+
+                        <br>
+
+                        <small>
+                            French • Today
+                        </small>
+
+                    </div>
+
+                    <span class="status">
+                        In Progress
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     TEACHER DASHBOARD
+========================================================= -->
+
+<section id="teacherDashboard"
+         class="hidden">
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <h3>Numeriq.</h3>
+
+        <div class="sidebar-item active">
+            🏠 Teacher Dashboard
+        </div>
+
+        <div class="sidebar-item">
+            📚 My Courses
+        </div>
+
+        <div class="sidebar-item">
+            📝 Assignments
+        </div>
+
+        <div class="sidebar-item">
+            🎯 Activities
+        </div>
+
+        <div class="sidebar-item">
+            🎥 Upload Videos
+        </div>
+
+        <div class="sidebar-item">
+            👨‍🎓 Students
+        </div>
+
+        <div class="sidebar-item">
+            📊 Student Progress
+        </div>
+
+        <div class="sidebar-item"
+             onclick="logout()">
+            🚪 Logout
+        </div>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <h1>
+                    Teacher Dashboard
+                </h1>
+
+                <p>
+                    Create, teach and monitor learning.
+                </p>
+
+            </div>
+
+            <button class="primary-btn"
+                    onclick="alert('Lesson creation interface opened.')">
+                + Create Content
+            </button>
+
+        </div>
+
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+                <span>Students</span>
+                <strong>126</strong>
+            </div>
+
+            <div class="dashboard-card">
+                <span>Active Courses</span>
+                <strong>8</strong>
+            </div>
+
+            <div class="dashboard-card">
+                <span>Assignments</span>
+                <strong>34</strong>
+            </div>
+
+            <div class="dashboard-card">
+                <span>Videos</span>
+                <strong>21</strong>
+            </div>
+
+        </div>
+
+
+        <div class="content-panel">
+
+            <h3>
+                Teacher Tools
+            </h3>
+
+
+            <div class="action-grid">
+
+                <div class="action-card">
+
+                    <h4>📚 Create Lesson</h4>
+
+                    <p>
+                        Build a structured lesson for
+                        your students.
+                    </p>
+
+                    <button class="secondary-btn"
+                            onclick="alert('Create lesson form opened.')">
+                        Create
+                    </button>
+
+                </div>
+
+
+                <div class="action-card">
+
+                    <h4>📝 Post Assignment</h4>
+
+                    <p>
+                        Create assignments and set
+                        deadlines.
+                    </p>
+
+                    <button class="secondary-btn"
+                            onclick="alert('Assignment creator opened.')">
+                        Create
+                    </button>
+
+                </div>
+
+
+                <div class="action-card">
+
+                    <h4>🎯 Create Activity</h4>
+
+                    <p>
+                        Build interactive learning
+                        activities.
+                    </p>
+
+                    <button class="secondary-btn"
+                            onclick="alert('Activity creator opened.')">
+                        Create
+                    </button>
+
+                </div>
+
+
+                <div class="action-card">
+
+                    <h4>🎥 Upload Video</h4>
+
+                    <p>
+                        Upload a lesson or educational
+                        video.
+                    </p>
+
+                    <button class="secondary-btn"
+                            onclick="openUploadModal()">
+                        Upload
+                    </button>
+
+                </div>
+
+
+                <div class="action-card">
+
+                    <h4>👨‍🎓 Student Work</h4>
+
+                    <p>
+                        Review student submissions.
+                    </p>
+
+                    <button class="secondary-btn"
+                            onclick="alert('Student submissions opened.')">
+                        Review
+                    </button>
+
+                </div>
+
+
+                <div class="action-card">
+
+                    <h4>📊 Progress</h4>
+
+                    <p>
+                        Monitor student performance.
+                    </p>
+
+                    <button class="secondary-btn"
+                            onclick="alert('Student analytics opened.')">
+                        View
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="content-panel">
+
+            <h3>
+                Recent Student Work
+            </h3>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Student</th>
+                            <th>Activity</th>
+                            <th>Score</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Student A</td>
+                            <td>Linear Equations</td>
+                            <td>92%</td>
+                            <td>Reviewed</td>
+                        </tr>
+
+                        <tr>
+                            <td>Student B</td>
+                            <td>Fractions</td>
+                            <td>81%</td>
+                            <td>Pending</td>
+                        </tr>
+
+                        <tr>
+                            <td>Student C</td>
+                            <td>English Grammar</td>
+                            <td>88%</td>
+                            <td>Reviewed</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD
+========================================================= -->
+
+<section id="adminDashboard"
+         class="hidden">
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <h3>Numeriq.</h3>
+
+        <div class="sidebar-item active">
+            🛡️ Admin Overview
+        </div>
+
+        <div class="sidebar-item">
+            👨‍🎓 Students
+        </div>
+
+        <div class="sidebar-item">
+            👩‍🏫 Teachers
+        </div>
+
+        <div class="sidebar-item">
+            📚 Courses
+        </div>
+
+        <div class="sidebar-item">
+            📊 Analytics
+        </div>
+
+        <div class="sidebar-item">
+            💳 Payments
+        </div>
+
+        <div class="sidebar-item">
+            ⚙️ Platform Settings
+        </div>
+
+        <div class="sidebar-item"
+             onclick="logout()">
+            🚪 Logout
+        </div>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <h1>
+                    Numeriq Admin
+                </h1>
+
+                <p>
+                    Platform overview and management.
+                </p>
+
+            </div>
+
+            <span class="status">
+                System Operational
+            </span>
+
+        </div>
+
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+                <span>Total Students</span>
+                <strong>4,821</strong>
+            </div>
+
+            <div class="dashboard-card">
+                <span>Teachers</span>
+                <strong>186</strong>
+            </div>
+
+            <div class="dashboard-card">
+                <span>Active Courses</span>
+                <strong>74</strong>
+            </div>
+
+            <div class="dashboard-card">
+                <span>Monthly Revenue</span>
+                <strong>$48K</strong>
+            </div>
+
+        </div>
+
+
+        <div class="content-panel">
+
+            <h3>
+                Platform Activity
+            </h3>
+
+            <div class="activity-list">
+
+                <div class="activity">
+
+                    <div>
+                        <strong>
+                            New student registration
+                        </strong>
+
+                        <br>
+
+                        <small>
+                            Student account created
+                        </small>
+                    </div>
+
+                    <span>
+                        Today
+                    </span>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <div>
+                        <strong>
+                            Teacher uploaded video
+                        </strong>
+
+                        <br>
+
+                        <small>
+                            Mathematics • Grade 8
+                        </small>
+                    </div>
+
+                    <span>
+                        Today
+                    </span>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <div>
+                        <strong>
+                            Assignment submitted
+                        </strong>
+
+                        <br>
+
+                        <small>
+                            English • Grade 6
+                        </small>
+                    </div>
+
+                    <span>
+                        Today
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="content-panel">
+
+            <h3>
+                Platform Users
+            </h3>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>User</th>
+                            <th>Role</th>
+                            <th>Activity</th>
+                            <th>Progress</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Student A</td>
+                            <td>Student</td>
+                            <td>Active</td>
+                            <td>82%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Teacher A</td>
+                            <td>Teacher</td>
+                            <td>Teaching</td>
+                            <td>24 Courses</td>
+                        </tr>
+
+                        <tr>
+                            <td>Student B</td>
+                            <td>Student</td>
+                            <td>Active</td>
+                            <td>74%</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <div class="content-panel">
+
+            <h3>
+                Payment Overview
+            </h3>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Plan</th>
+                            <th>Subscribers</th>
+                            <th>Price</th>
+                            <th>Monthly Revenue</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>AI Assisted Learning</td>
+                            <td>312</td>
+                            <td>$109/month</td>
+                            <td>$34,008</td>
+                        </tr>
+
+                        <tr>
+                            <td>Tutor Learning</td>
+                            <td>74</td>
+                            <td>$199/month</td>
+                            <td>$14,726</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     PAYMENT PAGE
+========================================================= -->
+
+<section id="paymentPage"
+         class="page hidden">
 
     <div class="section-title">
 
-        <h2>Student Dashboard</h2>
+        <h2>Choose Your Learning Plan</h2>
 
         <p>
-            Keep track of learning progress in one place.
+            Select the learning experience that fits your needs.
         </p>
 
     </div>
 
 
-    <div class="dashboard-grid">
+    <div class="pricing-grid">
 
-        <div class="dashboard-card">
+        <div class="price-card">
 
-            <span>Overall Score</span>
+            <h2>
+                AI Assisted Learning
+            </h2>
 
-            <strong>84%</strong>
-
-        </div>
-
-
-        <div class="dashboard-card">
-
-            <span>Lessons Completed</span>
-
-            <strong>18</strong>
-
-        </div>
-
-
-        <div class="dashboard-card">
-
-            <span>Questions Practiced</span>
-
-            <strong>124</strong>
-
-        </div>
-
-
-        <div class="dashboard-card">
-
-            <span>Learning Streak</span>
-
-            <strong>8 🔥</strong>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     TEACHER / ADMIN
-========================= -->
-
-<section class="teacher-section">
-
-    <div class="section-title">
-
-        <h2>Teacher & Administrator Tools</h2>
-
-        <p>
-            Give educators the tools to create and manage
-            learning content.
-        </p>
-
-    </div>
-
-
-    <div class="admin-panel">
-
-        <h3>Content Management</h3>
-
-        <p style="color:#64748b;">
-            Teachers and administrators can eventually create
-            lessons, upload videos, add practice questions,
-            assign learning activities and monitor students.
-        </p>
-
-
-        <div class="admin-actions">
-
-            <div class="admin-action" onclick="adminMessage('Create Lesson')">
-
-                <strong>📚 Create Lesson</strong>
-
-                <span>
-                    Build structured math lessons.
-                </span>
-
+            <div class="price">
+                $109
+                <span>/month</span>
             </div>
-
-
-            <div class="admin-action" onclick="adminMessage('Upload Video')">
-
-                <strong>🎥 Upload Video</strong>
-
-                <span>
-                    Add pre-recorded lesson videos.
-                </span>
-
-            </div>
-
-
-            <div class="admin-action" onclick="adminMessage('Add Questions')">
-
-                <strong>📝 Add Questions</strong>
-
-                <span>
-                    Build assessments and practice.
-                </span>
-
-            </div>
-
-
-            <div class="admin-action" onclick="adminMessage('View Students')">
-
-                <strong>👨‍🎓 View Students</strong>
-
-                <span>
-                    Monitor student progress.
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FOUNDERS
-========================= -->
-
-<section class="founders" id="about">
-
-    <div class="section-title">
-
-        <h2>Meet the Numeric Founders</h2>
-
-        <p>
-            Numeric is being built with the goal of making
-            mathematics learning more accessible, engaging
-            and personalized.
-        </p>
-
-    </div>
-
-
-    <div class="founders-grid">
-
-        <div class="founder">
-
-            <div class="founder-avatar">
-                M
-            </div>
-
-            <h3>Muazzam</h3>
-
-            <p>Co-Founder</p>
-
-        </div>
-
-
-        <div class="founder">
-
-            <div class="founder-avatar">
-                M
-            </div>
-
-            <h3>Maryam</h3>
-
-            <p>Co-Founder</p>
-
-        </div>
-
-
-        <div class="founder">
-
-            <div class="founder-avatar">
-                T
-            </div>
-
-            <h3>Tambuwal</h3>
-
-            <p>Co-Founder</p>
-
-        </div>
-
-    </div>
-
-
-    <div class="developer-credit">
-
-        <p>
-            <strong>Developer • Designer • Coder</strong>
-        </p>
-
-        <p>
-            Muazzam Dalhtu
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CTA
-========================= -->
-
-<section class="cta">
-
-    <h2>Make Math Make Sense.</h2>
-
-    <p>
-        Assess. Learn. Practice. Improve.
-    </p>
-
-    <button class="primary-btn" onclick="openModal()">
-        Start With Numeric
-    </button>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <div class="footer-grid">
-
-        <div>
-
-            <h3>Numeric.</h3>
 
             <p>
-                Personalized mathematics learning from
-                Kindergarten through Grade 12.
+                Learn independently with structured lessons,
+                activities, videos and AI-assisted support.
             </p>
 
-        </div>
+            <ul>
 
+                <li>✓ Full learning platform</li>
+                <li>✓ Math, English & French</li>
+                <li>✓ Video lessons</li>
+                <li>✓ Activities & assignments</li>
+                <li>✓ AI Learning Assistant</li>
+                <li>✓ Progress tracking</li>
 
-        <div>
+            </ul>
 
-            <h3>Learn</h3>
-
-            <a href="#learn">K–12 Math</a>
-            <a href="#games">Math Games</a>
-            <a href="#videos">Video Lessons</a>
-            <a href="#ai">AI Assistant</a>
-
-        </div>
-
-
-        <div>
-
-            <h3>Platform</h3>
-
-            <a href="#dashboard">Student Dashboard</a>
-            <a href="#videos">Lessons</a>
-            <a href="#">Practice</a>
-            <a href="#">Assessment</a>
+            <button class="primary-btn"
+                    onclick="selectPlan('AI Assisted Learning','$109')">
+                Choose AI Plan
+            </button>
 
         </div>
 
 
-        <div>
+        <div class="price-card featured">
 
-            <h3>Numeric</h3>
+            <span class="tag">
+                TUTOR SUPPORT
+            </span>
 
-            <a href="#about">Founders</a>
-            <a href="#">Teachers</a>
-            <a href="#">Administrators</a>
-            <a href="#">Contact</a>
+            <h2>
+                Learning With Tutor
+            </h2>
+
+            <div class="price">
+                $199
+                <span>/month</span>
+            </div>
+
+            <p>
+                Learn through the platform with additional
+                support from a qualified tutor.
+            </p>
+
+            <ul>
+
+                <li>✓ Everything in AI plan</li>
+                <li>✓ Tutor support</li>
+                <li>✓ Tutor-led classes</li>
+                <li>✓ Personalized guidance</li>
+                <li>✓ Assignments & feedback</li>
+                <li>✓ Progress monitoring</li>
+
+            </ul>
+
+            <button class="primary-btn"
+                    onclick="selectPlan('Learning With Tutor','$199')">
+                Choose Tutor Plan
+            </button>
 
         </div>
 
     </div>
 
+</section>
 
-    <div class="footer-bottom">
 
-        © 2026 Numeric. All rights reserved.
-        <br>
-        Built by Muazzam Dalhtu.
+<!-- =========================================================
+     PAYMENT CHECKOUT
+========================================================= -->
+
+<section id="checkoutPage"
+         class="page hidden">
+
+    <div class="auth-wrapper">
+
+        <div class="auth-info">
+
+            <h1>
+                Complete Payment
+            </h1>
+
+            <p id="selectedPlanText">
+                Selected plan
+            </p>
+
+            <ul>
+
+                <li>🔒 Secure checkout</li>
+
+                <li>💳 Multiple payment options</li>
+
+                <li>📚 Immediate platform access</li>
+
+                <li>🔄 Subscription management</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="auth-form">
+
+            <h2>
+                Payment Method
+            </h2>
+
+            <p>
+                Choose how you would like to pay.
+            </p>
+
+
+            <div class="payment-methods">
+
+                <div class="payment-method active"
+                     onclick="selectPayment(this,'card')">
+
+                    💳
+                    <br>
+                    Card / Bank
+
+                </div>
+
+
+                <div class="payment-method"
+                     onclick="selectPayment(this,'apple')">
+
+                    
+                    <br>
+                    Apple Pay
+
+                </div>
+
+
+                <div class="payment-method"
+                     onclick="selectPayment(this,'paypal')">
+
+                    🅿️
+                    <br>
+                    PayPal
+
+                </div>
+
+            </div>
+
+
+            <div id="cardPayment"
+                 class="payment-form active">
+
+                <div class="form-group">
+
+                    <label>
+                        Cardholder Name
+                    </label>
+
+                    <input
+                        type="text"
+                        placeholder="Full name">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Card Number
+                    </label>
+
+                    <input
+                        type="text"
+                        placeholder="0000 0000 0000 0000">
+
+                </div>
+
+
+                <div style="display:grid;
+                            grid-template-columns:1fr 1fr;
+                            gap:10px;">
+
+                    <div class="form-group">
+
+                        <label>
+                            Expiry
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="MM/YY">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            CVV
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="123">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div id="applePayment"
+                 class="payment-form">
+
+                <div style="padding:30px;
+                            text-align:center;
+                            background:#f8fafc;
+                            border-radius:12px;">
+
+                    <div style="font-size:50px;">
+                        
+                    </div>
+
+                    <h3>
+                        Apple Pay
+                    </h3>
+
+                    <p style="color:#64748b;">
+                        Continue with Apple Pay.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="paypalPayment"
+                 class="payment-form">
+
+                <div style="padding:30px;
+                            text-align:center;
+                            background:#f8fafc;
+                            border-radius:12px;">
+
+                    <div style="font-size:50px;">
+                        🅿️
+                    </div>
+
+                    <h3>
+                        PayPal
+                    </h3>
+
+                    <p style="color:#64748b;">
+                        Continue securely with PayPal.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button class="full-btn"
+                    onclick="completePayment()">
+
+                Continue Payment
+
+            </button>
+
+            <br><br>
+
+            <button class="secondary-btn"
+                    style="width:100%;"
+                    onclick="showPage('payment')">
+
+                Change Plan
+
+            </button>
+
+        </div>
 
     </div>
 
-</footer>
+</section>
 
 
-<!-- =========================
-     SIGNUP MODAL
-========================= -->
+<!-- =========================================================
+     CAREER APPLICATION MODAL
+========================================================= -->
 
-<div class="modal" id="signupModal">
+<div class="modal"
+     id="careerModal">
 
     <div class="modal-content">
 
-        <span class="close" onclick="closeModal()">
+        <span class="close"
+              onclick="closeCareerModal()">
             &times;
         </span>
 
-        <h2>Start Learning With Numeric</h2>
+        <h2>
+            Numeriq Educator Application
+        </h2>
 
-        <p>
-            Create a simple student profile to explore the
-            Numeric learning experience.
+        <p style="color:#64748b;margin-bottom:20px;">
+            Complete the application below and upload your CV.
         </p>
 
 
-        <form onsubmit="createProfile(event)">
+        <form onsubmit="submitCareerApplication(event)">
 
             <div class="form-group">
 
                 <label>
-                    Student Name
+                    Full Name
                 </label>
 
                 <input
                     type="text"
-                    id="studentName"
                     required
-                    placeholder="Enter your name"
-                >
+                    placeholder="Your full name">
 
             </div>
 
@@ -1991,28 +2832,40 @@ footer a {
             <div class="form-group">
 
                 <label>
-                    Grade
+                    Email
                 </label>
 
-                <select id="studentGrade" required>
+                <input
+                    type="email"
+                    required
+                    placeholder="you@example.com">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Subject You Teach
+                </label>
+
+                <select required>
 
                     <option value="">
-                        Select Grade
+                        Select subject
                     </option>
 
-                    <option>Kindergarten</option>
-                    <option>Grade 1</option>
-                    <option>Grade 2</option>
-                    <option>Grade 3</option>
-                    <option>Grade 4</option>
-                    <option>Grade 5</option>
-                    <option>Grade 6</option>
-                    <option>Grade 7</option>
-                    <option>Grade 8</option>
-                    <option>Grade 9</option>
-                    <option>Grade 10</option>
-                    <option>Grade 11</option>
-                    <option>Grade 12</option>
+                    <option>
+                        Mathematics
+                    </option>
+
+                    <option>
+                        English
+                    </option>
+
+                    <option>
+                        French
+                    </option>
 
                 </select>
 
@@ -2022,26 +2875,71 @@ footer a {
             <div class="form-group">
 
                 <label>
-                    Mathematics Level
+                    Teaching Experience
                 </label>
 
-                <select id="mathLevel" required>
-
-                    <option value="">
-                        Select Level
-                    </option>
-
-                    <option>Beginner</option>
-                    <option>Intermediate</option>
-                    <option>Advanced</option>
-
-                </select>
+                <textarea
+                    rows="4"
+                    required
+                    placeholder="Tell us about your teaching experience.">
+                </textarea>
 
             </div>
 
 
-            <button class="full-btn" type="submit">
-                Create My Profile
+            <div class="form-group">
+
+                <label>
+                    Why do you want to teach with Numeriq?
+                </label>
+
+                <textarea
+                    rows="4"
+                    required
+                    placeholder="Tell us about your teaching approach.">
+                </textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Upload CV
+                </label>
+
+                <input
+                    type="file"
+                    id="cvUpload"
+                    accept=".pdf,.doc,.docx"
+                    required>
+
+                <small style="color:#64748b;">
+                    PDF, DOC or DOCX
+                </small>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        required
+                        style="width:auto;">
+
+                    I confirm that the information provided
+                    is accurate.
+
+                </label>
+
+            </div>
+
+
+            <button class="full-btn">
+                Submit Application
             </button>
 
         </form>
@@ -2051,541 +2949,783 @@ footer a {
 </div>
 
 
+<!-- =========================================================
+     VIDEO UPLOAD MODAL
+========================================================= -->
+
+<div class="modal"
+     id="uploadModal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              onclick="closeUploadModal()">
+            &times;
+        </span>
+
+        <h2>
+            Upload Educational Video
+        </h2>
+
+        <p style="color:#64748b;margin-bottom:20px;">
+            Add a video lesson to your course.
+        </p>
+
+
+        <form onsubmit="submitVideo(event)">
+
+            <div class="form-group">
+
+                <label>
+                    Video Title
+                </label>
+
+                <input
+                    required
+                    placeholder="Example: Introduction to Fractions">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Subject
+                </label>
+
+                <select>
+
+                    <option>
+                        Mathematics
+                    </option>
+
+                    <option>
+                        English
+                    </option>
+
+                    <option>
+                        French
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Upload Video
+                </label>
+
+                <input
+                    type="file"
+                    accept="video/*"
+                    required>
+
+            </div>
+
+
+            <button class="full-btn">
+                Upload Video
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>
+                Numeriq.
+            </h3>
+
+            <p>
+                A modern online learning platform connecting
+                students, educators and intelligent learning
+                technology.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Learn
+            </h3>
+
+            <a href="#subjects">
+                Mathematics
+            </a>
+
+            <a href="#subjects">
+                English
+            </a>
+
+            <a href="#subjects">
+                French
+            </a>
+
+            <a href="#subjects">
+                STEM — Coming Soon
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Platform
+            </h3>
+
+            <a href="#" onclick="showPage('login')">
+                Login
+            </a>
+
+            <a href="#" onclick="showPage('signup')">
+                Sign Up
+            </a>
+
+            <a href="#careers">
+                Career at Numeriq
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Support
+            </h3>
+
+            <a href="#">
+                Help Center
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+            <a href="#">
+                Privacy
+            </a>
+
+            <a href="#">
+                Terms
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Numeriq. All rights reserved.
+
+        <br>
+
+        Built by Muazzam Dalhtu.
+
+    </div>
+
+</footer>
+
+
 <script>
 
-/* =========================
-   MODAL
-========================= */
+/* =========================================================
+   STATE
+========================================================= */
 
-function openModal() {
+let currentSignupRole = "student";
+let currentLoginRole = "student";
+let selectedPlan = "";
+let selectedPrice = "";
 
-    document.getElementById("signupModal").style.display = "flex";
 
+/* =========================================================
+   PAGE NAVIGATION
+========================================================= */
+
+function hideAllPages() {
+
+    document.getElementById("welcomePage")
+        .classList.add("hidden");
+
+    document.getElementById("loginPage")
+        .classList.add("hidden");
+
+    document.getElementById("signupPage")
+        .classList.add("hidden");
+
+    document.getElementById("studentDashboard")
+        .classList.add("hidden");
+
+    document.getElementById("teacherDashboard")
+        .classList.add("hidden");
+
+    document.getElementById("adminDashboard")
+        .classList.add("hidden");
+
+    document.getElementById("paymentPage")
+        .classList.add("hidden");
+
+    document.getElementById("checkoutPage")
+        .classList.add("hidden");
 }
 
-function closeModal() {
 
-    document.getElementById("signupModal").style.display = "none";
+function showPage(page) {
 
-}
+    hideAllPages();
+
+    window.scrollTo(0,0);
 
 
-window.onclick = function(event) {
+    if(page === "welcome") {
 
-    const modal = document.getElementById("signupModal");
-
-    if (event.target === modal) {
-
-        closeModal();
+        document.getElementById("welcomePage")
+            .classList.remove("hidden");
 
     }
 
-};
+
+    if(page === "login") {
+
+        document.getElementById("loginPage")
+            .classList.remove("hidden");
+
+    }
 
 
-/* =========================
-   PROFILE
-========================= */
+    if(page === "signup") {
 
-function createProfile(event) {
+        document.getElementById("signupPage")
+            .classList.remove("hidden");
+
+    }
+
+
+    if(page === "student") {
+
+        document.getElementById("studentDashboard")
+            .classList.remove("hidden");
+
+    }
+
+
+    if(page === "teacher") {
+
+        document.getElementById("teacherDashboard")
+            .classList.remove("hidden");
+
+    }
+
+
+    if(page === "admin") {
+
+        document.getElementById("adminDashboard")
+            .classList.remove("hidden");
+
+    }
+
+
+    if(page === "payment") {
+
+        document.getElementById("paymentPage")
+            .classList.remove("hidden");
+
+    }
+
+
+    if(page === "checkout") {
+
+        document.getElementById("checkoutPage")
+            .classList.remove("hidden");
+
+    }
+
+}
+
+
+/* =========================================================
+   SIGNUP ROLE
+========================================================= */
+
+function selectSignupRole(element, role) {
+
+    currentSignupRole = role;
+
+    document
+        .querySelectorAll("#signupPage .role-card")
+        .forEach(card => {
+
+            card.classList.remove("active");
+
+        });
+
+    element.classList.add("active");
+
+
+    document
+        .getElementById("studentFields")
+        .classList.add("hidden");
+
+    document
+        .getElementById("teacherFields")
+        .classList.add("hidden");
+
+    document
+        .getElementById("adminFields")
+        .classList.add("hidden");
+
+
+    if(role === "student") {
+
+        document
+            .getElementById("studentFields")
+            .classList.remove("hidden");
+
+    }
+
+
+    if(role === "teacher") {
+
+        document
+            .getElementById("teacherFields")
+            .classList.remove("hidden");
+
+    }
+
+
+    if(role === "admin") {
+
+        document
+            .getElementById("adminFields")
+            .classList.remove("hidden");
+
+    }
+
+}
+
+
+/* =========================================================
+   LOGIN ROLE
+========================================================= */
+
+function selectLoginRole(element, role) {
+
+    currentLoginRole = role;
+
+    document
+        .querySelectorAll("#loginPage .role-card")
+        .forEach(card => {
+
+            card.classList.remove("active");
+
+        });
+
+    element.classList.add("active");
+
+}
+
+
+/* =========================================================
+   SIGNUP
+========================================================= */
+
+function signupUser(event) {
 
     event.preventDefault();
 
-    const name =
-        document.getElementById("studentName").value;
 
-    const grade =
-        document.getElementById("studentGrade").value;
+    const name =
+        document.getElementById("signupName").value;
+
+    const email =
+        document.getElementById("signupEmail").value;
+
 
     localStorage.setItem(
-        "numericStudentName",
+        "numeriqUserName",
         name
     );
 
     localStorage.setItem(
-        "numericStudentGrade",
-        grade
+        "numeriqUserEmail",
+        email
     );
+
+    localStorage.setItem(
+        "numeriqUserRole",
+        currentSignupRole
+    );
+
+
+    if(currentSignupRole === "student") {
+
+        document.getElementById("studentWelcome")
+            .textContent =
+            "Welcome, " + name + ".";
+
+        showPage("student");
+
+        setTimeout(() => {
+
+            alert(
+                "Student account created successfully. " +
+                "Next, choose a learning plan."
+            );
+
+            showPaymentPage();
+
+        },300);
+
+    }
+
+
+    else if(currentSignupRole === "teacher") {
+
+        showPage("teacher");
+
+        alert(
+            "Teacher account created. Welcome to the Numeriq Teacher Dashboard."
+        );
+
+    }
+
+
+    else if(currentSignupRole === "admin") {
+
+        alert(
+            "Admin accounts require authorization. " +
+            "This prototype is opening the Admin Dashboard."
+        );
+
+        showPage("admin");
+
+    }
+
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+function loginUser(event) {
+
+    event.preventDefault();
+
+
+    const email =
+        document.getElementById("loginEmail").value;
+
+
+    localStorage.setItem(
+        "numeriqUserEmail",
+        email
+    );
+
+
+    if(currentLoginRole === "student") {
+
+        const savedName =
+            localStorage.getItem("numeriqUserName")
+            || "Student";
+
+        document.getElementById("studentWelcome")
+            .textContent =
+            "Welcome back, " + savedName + ".";
+
+        showPage("student");
+
+    }
+
+
+    if(currentLoginRole === "teacher") {
+
+        showPage("teacher");
+
+    }
+
+
+    if(currentLoginRole === "admin") {
+
+        showPage("admin");
+
+    }
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+function logout() {
 
     alert(
-        "Welcome to Numeric, " +
-        name +
-        "! Your student profile has been created."
+        "You have been logged out of the prototype."
     );
 
-    closeModal();
+    showPage("welcome");
 
 }
 
 
-/* =========================
-   ASSESSMENT
-========================= */
+/* =========================================================
+   PAYMENT
+========================================================= */
 
-function checkAnswer(answer) {
+function showPaymentPage() {
 
-    const feedback =
-        document.getElementById("feedback");
-
-    if (answer === 5) {
-
-        feedback.innerHTML =
-            "✅ Correct! 3 × 5 + 5 = 20. Great work!";
-
-        feedback.style.color = "#16a34a";
-
-    } else {
-
-        feedback.innerHTML =
-            "❌ Not quite. Try isolating x by subtracting 5 first.";
-
-        feedback.style.color = "#dc2626";
-
-    }
+    showPage("payment");
 
 }
 
 
-/* =========================
-   GAMES
-========================= */
+function selectPlan(plan, price) {
 
-function playGame(game) {
-
-    alert(
-        game +
-        " is opening! Interactive game functionality will be connected in the next MVP stage."
-    );
-
-}
+    selectedPlan = plan;
+    selectedPrice = price;
 
 
-/* =========================
-   AI ASSISTANT
-========================= */
-
-function sendAIMessage() {
-
-    const input =
-        document.getElementById("aiInput");
-
-    const chat =
-        document.getElementById("chatArea");
-
-    const message =
-        input.value.trim();
-
-    if (!message) return;
+    document.getElementById("selectedPlanText")
+        .innerHTML =
+        "<strong>" +
+        plan +
+        "</strong><br>" +
+        price +
+        " per month";
 
 
-    const userMessage =
-        document.createElement("div");
-
-    userMessage.className =
-        "message user-message";
-
-    userMessage.textContent =
-        message;
-
-    chat.appendChild(userMessage);
-
-
-    const aiMessage =
-        document.createElement("div");
-
-    aiMessage.className =
-        "message ai-message";
-
-
-    const lower =
-        message.toLowerCase();
-
-
-    if (lower.includes("fraction")) {
-
-        aiMessage.innerHTML =
-            "Let's learn fractions step by step. " +
-            "A fraction represents part of a whole. " +
-            "For example, 3/4 means 3 parts out of 4 equal parts. " +
-            "Would you like me to give you a practice question?";
-
-    }
-
-    else if (
-        lower.includes("algebra") ||
-        lower.includes("equation")
-    ) {
-
-        aiMessage.innerHTML =
-            "Let's break the equation into smaller steps. " +
-            "First, identify the variable. Then use inverse operations " +
-            "to isolate it. Send me the equation you're working on.";
-
-    }
-
-    else if (
-        lower.includes("addition") ||
-        lower.includes("add")
-    ) {
-
-        aiMessage.innerHTML =
-            "Addition combines quantities. For example, " +
-            "3 + 4 = 7. Try this: what is 8 + 5?";
-
-    }
-
-    else {
-
-        aiMessage.innerHTML =
-            "Great question! In the full Numeric platform, " +
-            "the AI Learning Assistant will explain this concept " +
-            "at your grade level and guide you step by step " +
-            "instead of simply giving you the answer.";
-
-    }
-
-
-    chat.appendChild(aiMessage);
-
-    input.value = "";
-
-    chat.scrollTop =
-        chat.scrollHeight;
+    showPage("checkout");
 
 }
 
 
-/* =========================
-   ADMIN
-========================= */
-
-function adminMessage(action) {
-
-    alert(
-        action +
-        " interface selected. This will become a functional teacher/admin feature when the backend is connected."
-    );
-
-}
-
-
-/* =========================
-   GRADE CONTENT
-========================= */
-
-const gradeData = {
-
-    "K": {
-
-        title: "Kindergarten Mathematics",
-
-        description:
-            "Fun, visual and interactive learning designed to build early mathematical confidence.",
-
-        lessons: [
-            ["🔢 Numbers 1–20", "Recognize, count and identify numbers."],
-            ["🔷 Shapes", "Explore circles, squares, triangles and more."],
-            ["🎨 Colors & Patterns", "Discover patterns through visual activities."],
-            ["🍎 Counting Objects", "Learn numbers using real-world objects."],
-            ["📏 Measurement", "Explore big, small, long and short."],
-            ["🎮 Math Games", "Build confidence through interactive play."]
-        ]
-
-    },
-
-    "1": {
-
-        title: "Grade 1 Mathematics",
-
-        description:
-            "Build strong foundations in counting, addition, subtraction, shapes and measurement.",
-
-        lessons: [
-            ["🔢 Place Value", "Understand ones and tens."],
-            ["➕ Addition", "Add numbers using visual models."],
-            ["➖ Subtraction", "Subtract using strategies and objects."],
-            ["📐 Shapes", "Identify and describe common shapes."],
-            ["⏰ Time", "Read clocks and understand time."],
-            ["💰 Money", "Identify coins and solve simple problems."]
-        ]
-
-    },
-
-    "2": {
-
-        title: "Grade 2 Mathematics",
-
-        description:
-            "Develop fluency in addition, subtraction, multiplication foundations and measurement.",
-
-        lessons: [
-            ["➕ Addition", "Multi-digit addition."],
-            ["➖ Subtraction", "Multi-digit subtraction."],
-            ["✖️ Multiplication", "Introduction to multiplication."],
-            ["📏 Measurement", "Length and units."],
-            ["🍕 Fractions", "Understand simple fractions."],
-            ["📊 Data", "Read basic charts and graphs."]
-        ]
-
-    },
-
-    "3": {
-
-        title: "Grade 3 Mathematics",
-
-        description:
-            "Strengthen multiplication, division, fractions, geometry and problem solving.",
-
-        lessons: [
-            ["✖️ Multiplication", "Multiplication facts and strategies."],
-            ["➗ Division", "Understand division."],
-            ["🍕 Fractions", "Compare and identify fractions."],
-            ["📐 Geometry", "Angles and shapes."],
-            ["📊 Data", "Graphs and data."],
-            ["🧠 Word Problems", "Solve multi-step problems."]
-        ]
-
-    },
-
-    "4": {
-
-        title: "Grade 4 Mathematics",
-
-        description:
-            "Develop deeper understanding of multi-digit operations, fractions and geometry.",
-
-        lessons: [
-            ["🔢 Place Value", "Large numbers and place value."],
-            ["✖️ Multiplication", "Multi-digit multiplication."],
-            ["➗ Division", "Long division foundations."],
-            ["🍕 Fractions", "Equivalent fractions."],
-            ["📐 Angles", "Measure and classify angles."],
-            ["📊 Data", "Interpret charts and graphs."]
-        ]
-
-    },
-
-    "5": {
-
-        title: "Grade 5 Mathematics",
-
-        description:
-            "Prepare students for middle-school mathematics through fractions, decimals and algebraic thinking.",
-
-        lessons: [
-            ["🍕 Fractions", "Operations with fractions."],
-            ["🔢 Decimals", "Decimal operations."],
-            ["📐 Geometry", "Area and volume."],
-            ["📊 Data", "Data interpretation."],
-            ["➗ Division", "Advanced division."],
-            ["🧠 Problem Solving", "Complex word problems."]
-        ]
-
-    },
-
-    "6": {
-
-        title: "Grade 6 Mathematics",
-
-        description:
-            "Transition into more abstract mathematics and pre-algebra.",
-
-        lessons: [
-            ["➗ Ratios", "Ratios and proportional reasoning."],
-            ["🍕 Fractions", "Operations with rational numbers."],
-            ["🔢 Integers", "Positive and negative numbers."],
-            ["📈 Expressions", "Introduction to algebraic expressions."],
-            ["📐 Geometry", "Area, volume and surface area."],
-            ["📊 Statistics", "Data and averages."]
-        ]
-
-    },
-
-    "7": {
-
-        title: "Grade 7 Mathematics",
-
-        description:
-            "Develop algebraic reasoning, proportional relationships and statistical thinking.",
-
-        lessons: [
-            ["📈 Algebra", "Expressions and equations."],
-            ["⚖️ Proportions", "Ratios and proportional relationships."],
-            ["📊 Statistics", "Mean, median and data."],
-            ["📐 Geometry", "Angles and geometric relationships."],
-            ["💯 Percentages", "Percent increase and decrease."],
-            ["🧠 Problem Solving", "Multi-step mathematical problems."]
-        ]
-
-    },
-
-    "8": {
-
-        title: "Grade 8 Mathematics",
-
-        description:
-            "Build strong foundations in algebra, functions, geometry and statistics.",
-
-        lessons: [
-            ["📈 Linear Equations", "Solve and graph equations."],
-            ["📊 Functions", "Introduction to functions."],
-            ["📐 Geometry", "Transformations and geometry."],
-            ["🔢 Exponents", "Powers and scientific notation."],
-            ["📊 Statistics", "Analyze data."],
-            ["🧠 Problem Solving", "Complex mathematical reasoning."]
-        ]
-
-    },
-
-    "9": {
-
-        title: "Grade 9 Mathematics",
-
-        description:
-            "Develop deeper algebraic and geometric reasoning.",
-
-        lessons: [
-            ["📈 Algebra", "Advanced algebraic expressions."],
-            ["📊 Functions", "Linear functions."],
-            ["🔢 Exponents", "Exponential relationships."],
-            ["📐 Geometry", "Coordinate geometry."],
-            ["📊 Statistics", "Probability and statistics."],
-            ["🧠 Problem Solving", "Advanced problem solving."]
-        ]
-
-    },
-
-    "10": {
-
-        title: "Grade 10 Mathematics",
-
-        description:
-            "Explore advanced algebra, geometry, functions and mathematical modeling.",
-
-        lessons: [
-            ["📈 Quadratics", "Quadratic equations and graphs."],
-            ["📊 Functions", "Functions and transformations."],
-            ["📐 Geometry", "Advanced geometry."],
-            ["🔢 Polynomials", "Polynomial operations."],
-            ["🎲 Probability", "Probability concepts."],
-            ["📊 Statistics", "Statistical analysis."]
-        ]
-
-    },
-
-    "11": {
-
-        title: "Grade 11 Mathematics",
-
-        description:
-            "Prepare for advanced mathematics and university-level concepts.",
-
-        lessons: [
-            ["📈 Advanced Algebra", "Advanced equations and inequalities."],
-            ["📊 Functions", "Polynomial and rational functions."],
-            ["📐 Trigonometry", "Trigonometric functions."],
-            ["🔢 Sequences", "Arithmetic and geometric sequences."],
-            ["🎲 Probability", "Advanced probability."],
-            ["📊 Statistics", "Statistical reasoning."]
-        ]
-
-    },
-
-    "12": {
-
-        title: "Grade 12 Mathematics",
-
-        description:
-            "Advanced mathematics and preparation for university and standardized examinations.",
-
-        lessons: [
-            ["∫ Calculus", "Limits, derivatives and integrals."],
-            ["📐 Trigonometry", "Advanced trigonometry."],
-            ["📊 Statistics", "Advanced statistical analysis."],
-            ["🎲 Probability", "Advanced probability."],
-            ["📈 Functions", "Advanced function analysis."],
-            ["🎓 Exam Preparation", "Practice and exam preparation."]
-        ]
-
-    }
-
-};
-
-
-function showGrade(grade) {
-
-    const data =
-        gradeData[grade];
-
-    const content =
-        document.getElementById("gradeContent");
-
-
-    let lessonsHTML = "";
-
-
-    data.lessons.forEach(function(lesson) {
-
-        lessonsHTML += `
-
-            <div class="lesson-card">
-
-                <h4>${lesson[0]}</h4>
-
-                <p>
-                    ${lesson[1]}
-                </p>
-
-            </div>
-
-        `;
-
-    });
-
-
-    content.innerHTML = `
-
-        <h3>
-            ${data.title}
-        </h3>
-
-        <p>
-            ${data.description}
-        </p>
-
-        <div class="lesson-list">
-            ${lessonsHTML}
-        </div>
-
-    `;
-
+function selectPayment(element, type) {
 
     document
-        .querySelectorAll(".grade-btn")
-        .forEach(function(button) {
+        .querySelectorAll(".payment-method")
+        .forEach(method => {
 
-            button.classList.remove("active");
+            method.classList.remove("active");
 
         });
 
+
+    element.classList.add("active");
+
+
+    document
+        .querySelectorAll(".payment-form")
+        .forEach(form => {
+
+            form.classList.remove("active");
+
+        });
+
+
+    if(type === "card") {
+
+        document
+            .getElementById("cardPayment")
+            .classList.add("active");
+
+    }
+
+
+    if(type === "apple") {
+
+        document
+            .getElementById("applePayment")
+            .classList.add("active");
+
+    }
+
+
+    if(type === "paypal") {
+
+        document
+            .getElementById("paypalPayment")
+            .classList.add("active");
+
+    }
+
 }
 
 
-/* =========================
-   KEYBOARD SUPPORT FOR AI
-========================= */
+function completePayment() {
 
-document
-    .getElementById("aiInput")
-    .addEventListener("keydown", function(event) {
+    alert(
+        "Payment checkout selected for " +
+        selectedPlan +
+        " (" +
+        selectedPrice +
+        "/month).\n\n" +
+        "This is a prototype. Real payment processing " +
+        "will be connected through a payment provider."
+    );
 
-        if (event.key === "Enter") {
 
-            sendAIMessage();
+    showPage("student");
 
-        }
+}
 
-    });
+
+/* =========================================================
+   CAREER APPLICATION
+========================================================= */
+
+function showCareerModal() {
+
+    document.getElementById("careerModal")
+        .style.display = "flex";
+
+}
+
+
+function closeCareerModal() {
+
+    document.getElementById("careerModal")
+        .style.display = "none";
+
+}
+
+
+function submitCareerApplication(event) {
+
+    event.preventDefault();
+
+
+    const cv =
+        document.getElementById("cvUpload");
+
+
+    if(!cv.files.length) {
+
+        alert("Please upload your CV.");
+
+        return;
+
+    }
+
+
+    alert(
+        "Thank you for applying to Numeriq.\n\n" +
+        "Your educator application and CV have been submitted " +
+        "in this prototype."
+    );
+
+
+    closeCareerModal();
+
+}
+
+
+/* =========================================================
+   VIDEO UPLOAD
+========================================================= */
+
+function openUploadModal() {
+
+    document.getElementById("uploadModal")
+        .style.display = "flex";
+
+}
+
+
+function closeUploadModal() {
+
+    document.getElementById("uploadModal")
+        .style.display = "none";
+
+}
+
+
+function submitVideo(event) {
+
+    event.preventDefault();
+
+
+    alert(
+        "Video upload submitted.\n\n" +
+        "In the full platform, the video will be uploaded " +
+        "to secure cloud storage and attached to the selected course."
+    );
+
+
+    closeUploadModal();
+
+}
+
+
+/* =========================================================
+   STUDENT SECTION
+========================================================= */
+
+function studentSection(section) {
+
+    alert(
+        "Opening " +
+        section +
+        " section."
+    );
+
+}
+
+
+/* =========================================================
+   MODAL OUTSIDE CLICK
+========================================================= */
+
+window.addEventListener("click", function(event) {
+
+    const career =
+        document.getElementById("careerModal");
+
+    const upload =
+        document.getElementById("uploadModal");
+
+
+    if(event.target === career) {
+
+        closeCareerModal();
+
+    }
+
+
+    if(event.target === upload) {
+
+        closeUploadModal();
+
+    }
+
+});
+
+
+/* =========================================================
+   INITIAL PAGE
+========================================================= */
+
+showPage("welcome");
 
 </script>
 
